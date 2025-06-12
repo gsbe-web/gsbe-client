@@ -11,9 +11,8 @@
     "test:ci": "vitest run",
     "test:e2e:ci": "playwright test",
     "lint:tsc": "tsc -b",
-    "lint:biome": "biome check --write --unsafe",
-    "lint": "pnpm run \"/lint:./\"",
-    "format": "biome format",
+    "lint": "biome lint --write",
+    "format": "biome format --write",
     "validate": "pnpm lint && pnpm test:ci && pnpm test:e2e:ci",
     "build": "vite build",
     "preview": "vite preview",
@@ -87,8 +86,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "yarn format",
-      "yarn lint"
+      "biome check --write --no-errors-on-unmatched"
     ]
   },
   "husky": {

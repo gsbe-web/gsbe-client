@@ -5,15 +5,15 @@ export const ENDPOINT_MAPPERS = {
   EVENTS: {
     FEATURES_REGEX: /.*(events).*/,
     V1: {
-      getBySlug: (slug: string) => `/api/v1/events/slug/${slug}`,
-      list: "/api/v1/events",
+      getBySlug: (slug: string) => `/events/slug/${slug}`,
+      list: "/events",
     },
   },
   NEWS: {
     FEATURES_REGEX: /.*(news).*/,
     V1: {
-      getBySlug: (slug: string) => `/api/v1/news/slug/${slug}`,
-      list: "/api/v1/news",
+      getBySlug: (slug: string) => `/news/slug/${slug}`,
+      list: "/news",
     },
   },
 };
