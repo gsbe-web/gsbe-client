@@ -16,7 +16,8 @@
     "format": "biome format",
     "validate": "pnpm lint && pnpm test:ci && pnpm test:e2e:ci",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postinstall": "husky"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
