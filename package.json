@@ -1,0 +1,98 @@
+{
+  "name": "client-app",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite --open",
+    "test": "vitest",
+    "test:e2e": "playwright test --ui",
+    "test:ci": "vitest run",
+    "test:e2e:ci": "playwright test",
+    "lint:tsc": "tsc -b",
+    "lint:biome": "biome check --write --unsafe",
+    "lint": "pnpm run \"/lint:./\"",
+    "format": "biome format",
+    "validate": "pnpm lint && pnpm test:ci && pnpm test:e2e:ci",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@react-google-maps/api": "^2.20.6",
+    "@tanstack/react-query": "5.80.6",
+    "@tanstack/react-query-devtools": "5.80.6",
+    "@types/axios": "^0.14.4",
+    "framer-motion": "^12.16.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.0",
+    "pino": "^9.7.0",
+    "primereact": "^10.9.6",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-error-boundary": "6.0.0",
+    "react-markdown": "^10.1.0",
+    "react-router": "7.6.2",
+    "react-spinners": "^0.17.0",
+    "react-truncate": "^2.4.0",
+    "valibot": "1.1.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.0.0-beta.6",
+    "@playwright/test": "1.52.0",
+    "@tailwindcss/vite": "4.1.8",
+    "@testing-library/dom": "10.4.0",
+    "@testing-library/jest-dom": "6.6.3",
+    "@testing-library/react": "16.3.0",
+    "@testing-library/user-event": "14.6.1",
+    "@types/node": "22.15.30",
+    "@types/pino": "^7.0.5",
+    "@types/react": "19.1.6",
+    "@types/react-dom": "19.1.6",
+    "@types/react-truncate": "^2.3.7",
+    "@vitejs/plugin-react": "4.5.1",
+    "@vitest/coverage-v8": "3.2.2",
+    "happy-dom": "17.6.3",
+    "msw": "2.10.1",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.12",
+    "tailwindcss": "4.1.8",
+    "typescript": "5.8.3",
+    "vite": "6.3.5",
+    "vite-tsconfig-paths": "5.1.4",
+    "vitest": "3.2.2"
+  },
+  "yarn": {
+    "ignoredBuiltDependencies": [
+      "cypress"
+    ],
+    "onlyBuiltDependencies": [
+      "@biomejs/biome",
+      "@tailwindcss/oxide",
+      "esbuild",
+      "msw"
+    ]
+  },
+  "packageManager": "yarn@1.22.19",
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "yarn format",
+      "yarn lint"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

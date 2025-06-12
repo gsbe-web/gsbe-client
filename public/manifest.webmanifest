@@ -1,0 +1,20 @@
+{
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "icons": [
+    {
+      "purpose": "maskable",
+      "sizes": "192x192",
+      "src": "/images/GSBE_logo main.png",
+      "type": "image/png"
+    }
+  ],
+  "id": "/",
+  "lang": "en",
+  "name": "Ghana Society of Biomedical Engineers",
+  "scope": "/",
+  "screenshots": [],
+  "short_name": "GSBE",
+  "start_url": "/",
+  "theme_color": "#BD34FE"
+}
