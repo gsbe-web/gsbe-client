@@ -1,40 +1,38 @@
-# Vitamin 2.0
+# Introduction
 
-![Test workflow](https://github.com/wtchnm/Vitamin/actions/workflows/test.yml/badge.svg) [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/wtchnm/Vitamin/blob/main/LICENSE)
+This is a web platform for the GSBE.
 
-Opinionated Vite starter template. Previous version available on v1 branch.
+# Purpose
 
-## Features
+The platform will serve as a hub for sharing resources, fostering collaboration, and supporting professional development in the field.
 
-- [Vite 6](https://vitejs.dev) with [React 19](https://reactjs.org), [TypeScript 5](https://www.typescriptlang.org) and [absolute imports](https://github.com/aleclarson/vite-tsconfig-paths).
-- [Tailwind CSS v4](https://tailwindcss.com) for easy stylization.
-- [Biome V2](https://next.biomejs.dev) for linting, formatting and automatic import sorting.
-- Write unit and integration tests with [Vitest 3](https://vitest.dev/) and [Testing Library 16](https://testing-library.com/).
-- Write e2e tests with [Playwright 1.52](https://www.cypress.io).
+## Run
 
-## Getting started
+> Run frontend in development with yarn
+> `yarn dev`
+> Run both frontend in development with npm
+> `npm run dev`
 
-Use this repository as a [GitHub template](https://github.com/wtchnm/Vitamin/generate) or use [degit](https://github.com/Rich-Harris/degit) to clone to your machine with an empty git history:
+## Structure
 
-```
-npx degit wtchnm/Vitamin#main my-app
-```
+`client-app` - Where our frontend apps live. It's a react application.
 
-Then, install the dependencies:
+## Tech Stack + Features
 
-```
-pnpm install
-```
+### Frameworks
 
-## Scripts
+- [React](https://react.dev/) [Vite](https://vite.dev/) – A web framework that lets you focus on the user interface and work back through web standards to deliver a fast, slick, and resilient user experience.
 
-- `pnpm dev` - start a development server with hot reload.
-- `pnpm build` - build for production. The generated files will be on the `dist` folder.
-- `pnpm preview` - locally preview the production build.
-- `pnpm test` - run unit and integration tests related to changed files based on git.
-- `pnpm test:ci` - run all unit and integration tests in CI mode.
-- `pnpm test:e2e` - run all e2e tests with Playwright.
-- `pnpm test:e2e:ci` - run all e2e tests headlessly.
-- `pnpm format` - format all files with Biome Formatter.
-- `pnpm lint` - runs TypeScript and Biome.
-- `pnpm validate` - runs `lint`, `test:ci` and `test:e2e:ci`.
+### Platforms
+
+- [Vercel](https://vercel.com/) – Easily deploy system.
+
+### UI
+
+- [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework for rapid UI development.
+- [Framer Motion](https://framer.com/motion) – Motion library for React to animate components with ease.
+
+## Authors
+
+Created by a team of recent graduate engineers
+[Eben Domey](https://github.com/EbenDomey), [Elvis Akpene](https://github.com/ElvisAkpene), [John Jeff](https://github.com/lala0z), [Rasheed Jawula](https://github.com/abdul-rasheed1), [Prince Gbezeh](https://github.com/gbezzz)
