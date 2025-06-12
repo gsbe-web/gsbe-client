@@ -54,7 +54,7 @@
             "noUndeclaredDependencies": "off"
           },
           "nursery": {
-						"useSortedClasses": "off",
+            "useSortedClasses": "off",
             "noUnresolvedImports": "off",
             "noUnknownAtRule": "off",
             "useExplicitType": "off",
@@ -66,7 +66,7 @@
             "noReactSpecificProps": "off"
           },
           "performance": {
-            "noBarrelFile":"off",
+            "noBarrelFile": "off",
             "noReExportAll": "off",
             "noImgElement": "off",
             "noNamespaceImport": "off"
