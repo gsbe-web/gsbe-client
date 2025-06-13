@@ -1,10 +1,10 @@
-import type { News } from "@api/types";
+import type { News } from "@api/news";
 
 export interface BlogDetailProps {
-  blogPost: News;
+	blogPost: News;
 }
 
 export interface BlogBodyProps {
-  blogPost: News;
-  setShowSharePopup: (show: boolean) => void;
+	blogPost: News;
+	setShowSharePopup: (show: boolean) => void;
 }

@@ -1,17 +1,17 @@
 import type {
-  ApiSuccessResponse,
-  PaginationResponse,
+	ApiSuccessResponse,
+	PaginationResponse,
 } from "@api/shared/types/responses";
 
 export interface EventData {
-  id: string;
-  slug: string;
-  imageId: string;
-  title: string;
-  date: Date;
-  location: string;
-  description?: string;
-  file: string;
+	id: string;
+	slug: string;
+	imageId: string;
+	title: string;
+	date: Date;
+	location: string;
+	description?: string;
+	file: string;
 }
 
 export type PaginatedEventResponse = PaginationResponse<EventData>;

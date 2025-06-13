@@ -1,16 +1,17 @@
 import { getEventBySlug, getEvents } from "@api/events/events.repository";
 import type { PaginationRequest } from "@api/shared/types";
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 
 export const useEvents = (params: PaginationRequest) =>
-  useQuery({
-    queryKey: ["events"],
-    queryFn: () => getEvents(params),
-  });
+	useQuery({
+		queryKey: ["events", params.page],
+		queryFn: () => getEvents(params),
+		placeholderData: keepPreviousData,
+	});
 
 export const useEvent = (slug: string) =>
-  useQuery({
-    queryKey: ["events", slug],
-    queryFn: () => getEventBySlug(slug),
-    enabled: !!slug,
-  });
+	useQuery({
+		queryKey: ["events", slug],
+		queryFn: () => getEventBySlug(slug),
+		enabled: !!slug,
+	});

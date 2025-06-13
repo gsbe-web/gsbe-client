@@ -4,20 +4,20 @@
 import type DetachedWindowApi from "happy-dom/lib/window/DetachedWindowAPI.js";
 
 interface ViteTypeOptions {
-  strictImportMetaEnv: unknown;
+	strictImportMetaEnv: unknown;
 }
 
 interface ImportMetaEnv {
-  readonly VITE_API_BASE_URL: string;
-  readonly VITE_GOOGLE_MAPS_API_KEY: string;
+	readonly VITE_API_BASE_URL: string;
+	readonly VITE_GOOGLE_MAPS_API_KEY: string;
 }
 
 interface ImportMeta {
-  readonly env: ImportMetaEnv;
+	readonly env: ImportMetaEnv;
 }
 
 declare global {
-  interface Window {
-    happyDOM?: DetachedWindowApi;
-  }
+	interface Window {
+		happyDOM?: DetachedWindowApi;
+	}
 }
