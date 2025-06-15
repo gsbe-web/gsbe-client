@@ -51,7 +51,7 @@ export const BlogCard: React.FC<BlogDetailProps> = (props) => {
 			<div className="flex h-full flex-col justify-between overflow-hidden">
 				<img
 					alt={blogPost.title}
-					className="h-full w-full cursor-pointer border"
+					className="h-full w-full cursor-pointer"
 					src={`https://lh3.googleusercontent.com/d/${blogPost.postImageId}`}
 				/>
 				<div className="px-6 pt-4">
@@ -92,9 +92,9 @@ export const BlogCard: React.FC<BlogDetailProps> = (props) => {
 							{blogPost.title}
 						</div>
 					</Link>
-					<p className="line-clamp-1 h-10 w-90 pb-5 text-left text-sm text-ellipsis text-gray-700">
+					<div className="line-clamp-1 h-10 w-90 pb-5 text-left text-sm text-ellipsis text-gray-700">
 						<HtmlRenderer>{blogPost.content}</HtmlRenderer>
-					</p>
+					</div>
 				</div>
 				<div className="flex items-center px-6 pt-4 pb-2 text-black">
 					<div className="flex flex-grow justify-between border-t-2 py-3">

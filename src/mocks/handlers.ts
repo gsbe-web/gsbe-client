@@ -1,5 +1,5 @@
 import { ENDPOINT_MAPPERS } from "@api/endpoints";
-import { logger } from "loggers";
+import { logger } from "@loggers";
 import { http } from "msw";
 
 export const handlers = [

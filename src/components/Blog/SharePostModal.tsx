@@ -1,4 +1,3 @@
-/** biome-ignore-all lint/suspicious/noConsole: tbd */
 import {
 	faFacebook,
 	faLinkedin,

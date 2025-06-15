@@ -18,6 +18,8 @@ export default defineConfig(() => ({
 			"@pages": path.resolve(__dirname, "./src/pages"),
 			"@typings": path.resolve(__dirname, "./src/typings"),
 			"@utils": path.resolve(__dirname, "./src/utils"),
+			"@lib": path.resolve(__dirname, "./src/lib"),
+			"@hooks": path.resolve(__dirname, "./src/hooks"),
 		},
 	},
 	test: {

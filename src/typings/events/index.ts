@@ -1,4 +1,4 @@
-import type { EventData } from "@api/types";
+import type { EventData } from "@api/events";
 
 export interface EventCardProps {
 	event: EventData;

@@ -41,7 +41,7 @@ export const BlogBody: React.FC<BlogBodyProps> = (props) => {
 				<img
 					alt={blogPost.title}
 					className="mx-auto w-full cursor-pointer lg:h-[40rem]"
-					src={`https://lh3.googleusercontent.com/d/${blogPost.postImageId}?authuser=0`}
+					src={`https://lh3.googleusercontent.com/d/${blogPost.postImageId}`}
 				/>
 			</div>
 			<div>

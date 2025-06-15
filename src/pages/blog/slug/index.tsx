@@ -5,12 +5,9 @@ import { Link, useParams } from "react-router";
 
 export function OpenedBlog() {
 	const { slug } = useParams();
-	const { data: post, isLoading, isError } = useNews(slug || "");
+	const { data: post, isLoading } = useNews(slug || "");
 	if (isLoading) {
 		return <Spinner isLoading={true} />;
-	}
-	if (isError) {
-		return <p>Failed to load posts</p>;
 	}
 	if (!post) {
 		return <p>Posts not found</p>;
