@@ -1,3 +1,4 @@
+import { ErrorIcon } from "@components/ui";
 import axios from "axios";
 import { toast } from "sonner";
 
@@ -18,6 +19,8 @@ apiClient.interceptors.response.use(
 		toast.error(response.data.message, {
 			position: "top-right",
 			closeButton: true,
+			className: "bg-red",
+			icon: ErrorIcon(),
 		});
 		return Promise.reject(error);
 	},

@@ -48,7 +48,7 @@ export const Header = () => {
 					"/",
 					"/about",
 					"/events",
-					"/blog",
+					"/blogs",
 					"/contact",
 					"/support",
 					"/executives",

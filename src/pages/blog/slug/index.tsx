@@ -21,7 +21,7 @@ export function OpenedBlog() {
 						<div className="text-xl">
 							<div className="flex items-baseline justify-between px-10 text-left align-middle leading-8">
 								<h1 className="mt-10 text-lg font-normal text-[#455D6B] capitalize">
-									<Link to="/blog">All Posts</Link>
+									<Link to="/blogs">All Posts</Link>
 								</h1>
 								<DynamicSearchBar />
 							</div>

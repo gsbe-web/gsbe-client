@@ -1,4 +1,4 @@
-import { ShareDropDown, SharePostModal } from "@components/Blog";
+import { ShareDropDown } from "@components/Blog";
 import { HtmlRenderer } from "@components/shared";
 import {
 	faEye,
@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { BlogDetailProps } from "@typings/blog";
 import { formatTimestamp } from "@utils";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
 export const BlogCard: React.FC<BlogDetailProps> = (props) => {
@@ -22,18 +22,6 @@ export const BlogCard: React.FC<BlogDetailProps> = (props) => {
 	const [likeCount, setLikeCount] = useState(blogPost.likes);
 	const [viewCount, setViewCount] = useState(blogPost.views);
 	const [commentCount] = useState(blogPost.comments);
-	const [open, setOpen] = useState(false);
-	const [sharePostModal, setSharePostModal] = useState(false);
-	const sharePostRef = useRef<HTMLDivElement>(null);
-
-	const openModal = () => {
-		setOpen(false);
-		setSharePostModal(true);
-	};
-
-	const closeModal = () => {
-		setSharePostModal(false);
-	};
 
 	useEffect(() => {
 		setViewCount((prevCount: number) => prevCount + 1);
@@ -71,22 +59,11 @@ export const BlogCard: React.FC<BlogDetailProps> = (props) => {
 								</p>
 							</div>
 						</div>
-						<ShareDropDown
-							open={open}
-							openModal={openModal}
-							setOpen={setOpen}
-							sharePostRef={sharePostRef}
-						>
-							<SharePostModal
-								closeSharePostModal={closeModal}
-								sharePostModal={sharePostModal}
-								slug={blogPost.slug}
-							/>
-						</ShareDropDown>
+						<ShareDropDown slug={blogPost.slug} name={blogPost.title} />
 					</div>
 					<Link
 						onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-						to={`/blog/${blogPost.slug}`}
+						to={`/blogs/${blogPost.slug}`}
 					>
 						<div className="my-3 cursor-pointer pt-2 text-xl font-bold tracking-wider text-[#254152] hover:text-[#636362]">
 							{blogPost.title}

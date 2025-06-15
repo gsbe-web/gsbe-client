@@ -34,7 +34,7 @@ export function App() {
 								<Route element={<About />} index={true} />
 							</Route>
 
-							<Route path="blog">
+							<Route path="blogs">
 								<Route element={<Blog />} index={true} />
 								<Route element={<OpenedBlog />} path=":slug" />
 							</Route>

@@ -1,24 +1,11 @@
-import { ShareDropDown, SharePostModal } from "@components/Blog";
+import { ShareDropDown } from "@components/Blog/Share";
 import { faCrown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { BlogDetailProps } from "@typings/blog";
 import { formatTimestamp } from "@utils";
-import { useRef, useState } from "react";
 
 export const BloggerProfile: React.FC<BlogDetailProps> = (props) => {
 	const { blogPost } = props;
-	const [open, setOpen] = useState(false);
-	const [sharePostModal, setSharePostModal] = useState(false);
-	const sharePostRef = useRef<HTMLDivElement | null>(null);
-
-	const openModal = () => {
-		setOpen(false);
-		setSharePostModal(true);
-	};
-
-	const closeModal = () => {
-		setSharePostModal(false);
-	};
 
 	const { date, time } = formatTimestamp(blogPost.dateTimePosted);
 
@@ -39,18 +26,7 @@ export const BloggerProfile: React.FC<BlogDetailProps> = (props) => {
 					</p>
 				</div>
 			</div>
-			<ShareDropDown
-				open={open}
-				openModal={openModal}
-				setOpen={setOpen}
-				sharePostRef={sharePostRef}
-			>
-				<SharePostModal
-					closeSharePostModal={closeModal}
-					sharePostModal={sharePostModal}
-					slug={blogPost.slug}
-				/>
-			</ShareDropDown>
+			<ShareDropDown slug={blogPost.slug} name={blogPost.title} />
 		</div>
 	);
 };

@@ -1,6 +1,6 @@
 // ContactUs.tsx
 
-import { GoogleMaps } from "@components/Contact/Map";
+import { GsbeMap } from "@components/Contact/Map";
 import {
 	faEnvelope,
 	faLocationDot,
@@ -107,8 +107,8 @@ export const ContactUs = () => {
 						</form>
 					</div>
 				</div>
-				<div className="mt-10">
-					<GoogleMaps />
+				<div className="mt-10 h-[400px] w-full border">
+					<GsbeMap />
 				</div>
 			</div>
 		</div>
