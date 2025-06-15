@@ -14,7 +14,7 @@
     "lint": "biome lint --write",
     "format": "biome format --write",
     "format:lint:staged": "biome check --write --no-errors-on-unmatched",
-    "validate": "pnpm lint && pnpm test:ci && pnpm test:e2e:ci",
+    "validate": "lint && test:ci && test:e2e:ci",
     "build": "vite build",
     "preview": "vite preview",
     "postinstall": "husky"
