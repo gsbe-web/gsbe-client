@@ -6,5 +6,4 @@ export interface BlogDetailProps {
 
 export interface BlogBodyProps {
 	blogPost: News;
-	setShowSharePopup: (show: boolean) => void;
 }

@@ -1,3 +1,4 @@
+import { ShareLinkPopUp } from "@components/Blog";
 import { HtmlRenderer } from "@components/shared";
 import {
 	faFacebookF,
@@ -22,6 +23,7 @@ export const BlogBody: React.FC<BlogBodyProps> = (props) => {
 	const [liked, setLiked] = useState(false);
 	const [likeCount, setLikeCount] = useState<number>(blogPost.likes);
 	const [showComments, setShowComments] = useState(false);
+	const [showSharePopup, setShowSharePopup] = useState(false);
 
 	const toggleLike = () => {
 		setLiked((prev) => !prev);
@@ -71,7 +73,7 @@ export const BlogBody: React.FC<BlogBodyProps> = (props) => {
 				>
 					<FontAwesomeIcon icon={faLinkedinIn} size="lg" />
 				</a>
-				<button onClick={() => props.setShowSharePopup(true)} type="button">
+				<button onClick={() => setShowSharePopup(true)} type="button">
 					<FontAwesomeIcon icon={faLink} size="lg" />
 				</button>
 				<p className="flex items-center justify-center gap-2">
@@ -117,6 +119,10 @@ export const BlogBody: React.FC<BlogBodyProps> = (props) => {
 					</button>
 				</div>
 			)}
+			<ShareLinkPopUp
+				openDialog={showSharePopup}
+				onOpenDialog={setShowSharePopup}
+			/>
 		</div>
 	);
 };

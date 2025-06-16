@@ -22,9 +22,9 @@ export const EventCard: React.FC<EventCardProps> = (props) => {
 					{date} | {event.location}
 				</p>
 			</div>
-			<div className="m-auto px-4 pb-4">
+			<div className="m-auto rounded-full border bg-[#26414C] p-4 hover:bg-[#1D3038]">
 				<Link
-					className="rounded-full bg-[#26414C] p-4 text-center font-bold text-white transition duration-300 hover:bg-[#1D3038]"
+					className="text-center font-bold text-white transition duration-300"
 					to={`/events/${event.slug}`}
 				>
 					Register Now

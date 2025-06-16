@@ -21,9 +21,8 @@ export const SharePostModal: React.FC<SharePostModalProps> = (props) => {
 		navigator.clipboard
 			.writeText(linkToCopy)
 			.then(() => {
-				logger.info("Link copied to clipboard");
 				toast.info("Link copied to clipboard!", {
-					position: "top-right",
+					position: "top-center",
 					closeButton: true,
 					icon: <ClipboardCheck />,
 				});

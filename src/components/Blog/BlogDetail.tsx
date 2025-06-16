@@ -1,10 +1,10 @@
-import { BlogBody, BloggerProfile, ShareLinkPopUp } from "@components/Blog";
+import { BlogBody, BloggerProfile } from "@components/Blog";
 import type { BlogDetailProps } from "@typings/blog";
 import { useEffect, useState } from "react";
 
 export const BlogDetail: React.FC<BlogDetailProps> = (props) => {
 	const { blogPost } = props;
-	const [showSharePopup, setShowSharePopup] = useState(false);
+
 	const [viewCount, setViewCount] = useState(blogPost.views);
 
 	const incrementView = () => {
@@ -27,15 +27,8 @@ export const BlogDetail: React.FC<BlogDetailProps> = (props) => {
 			<div className="border p-4 py-10 md:px-20">
 				{/* Blog Post Content */}
 				<BloggerProfile blogPost={blogPost} />
-				<BlogBody
-					blogPost={{ ...blogPost, views: viewCount }}
-					setShowSharePopup={setShowSharePopup}
-				/>
+				<BlogBody blogPost={{ ...blogPost, views: viewCount }} />
 			</div>
-			<ShareLinkPopUp
-				setShowSharePopup={setShowSharePopup}
-				showSharePopup={showSharePopup}
-			/>
 		</div>
 	);
 };
