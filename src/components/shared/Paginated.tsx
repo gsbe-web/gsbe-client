@@ -47,16 +47,21 @@ export function Paginated(props: PaginationProps) {
 						Prev
 					</Button>
 				</PaginationItem>
-				{Array.from({ length: totalPages }, (_, i) => 1 + i).map((n) => (
+				{Array.from(
+					{ length: totalPages > 5 ? 5 : totalPages },
+					(_, i) => 1 + i,
+				).map((n) => (
 					<PaginationItem key={n}>
 						<PaginationLink href={`?page=${n}`} isActive={currentPage === n}>
 							{n}
 						</PaginationLink>
 					</PaginationItem>
 				))}
-				<PaginationItem>
-					<PaginationEllipsis />
-				</PaginationItem>
+				{totalPages > 5 && (
+					<PaginationItem>
+						<PaginationEllipsis />
+					</PaginationItem>
+				)}
 				<PaginationItem>
 					<Button
 						variant="outline"

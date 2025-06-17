@@ -6,6 +6,15 @@
 		"source.action.useSortedKeys.biome": "explicit",
 		"source.action.useSortedProperties.biome": "explicit"
 	},
+	"emmet.includeLanguages": {
+		"javascript": "javascriptreact",
+		"typescript": "typescriptreact"
+	},
+	"emmet.triggerExpansionOnTab": true,
+	"emmet.syntaxProfiles": {
+		"javascript": "jsx",
+		"typescript": "tsx"
+	},
 	"[typescript]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},
@@ -14,8 +23,5 @@
 	"editor.tabSize": 2,
 	"editor.insertSpaces": false,
 	"typescript.tsdk": "node_modules/typescript/lib",
-	"typescript.preferences.importModuleSpecifier": "non-relative",
-	"[typescriptreact]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	}
+	"typescript.preferences.importModuleSpecifier": "non-relative"
 }

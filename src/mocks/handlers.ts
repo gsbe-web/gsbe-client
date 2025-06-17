@@ -8,6 +8,11 @@ export const handlers = [
 		return;
 	}),
 
+	http.get("https://ipapi.co/*", ({ request }) => {
+		logger.info("Fetched", request.url);
+		return;
+	}),
+
 	http.get(/.*(istockphoto|unsplash).*/, ({ request }) => {
 		logger.info("Fetched", request.url);
 		return;
