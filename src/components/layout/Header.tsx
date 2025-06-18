@@ -74,8 +74,8 @@ export const Header = () => {
 	};
 
 	return (
-		<header className="fixed top-0 w-full grid grid-cols-[1fr_2fr_1fr] bg-[#254152] py-4  text-[#FFFFFF] z-1000">
-			<div className="flex items-center justify-end">
+		<header className="fixed top-0 w-full grid grid-cols-2 lg:grid-cols-[1fr_2fr_1fr] bg-[#254152] py-4  text-[#FFFFFF] z-1000">
+			<div className="flex items-center lg:justify-end">
 				<Logo />
 				<SiteName />
 			</div>
