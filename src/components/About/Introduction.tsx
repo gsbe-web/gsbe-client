@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 export const Introduction = () => {
 	return (
-		<div className="mx-25 p-16 my-2 text-center text-[#254152] min-h-[90vh] bg-white">
+		<div className="mx-25 p-16 mt-2 text-center text-[#254152] min-h-[90vh] bg-white">
 			<div className="uppercase font-anton text-5xl font-extralight">
 				Who we are
 			</div>

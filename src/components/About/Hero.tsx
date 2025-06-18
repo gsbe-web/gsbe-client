@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 export const AboutHero = () => {
 	return (
-		<div className="w-dvw h-[55vh]">
+		<div className="w-dvw h-[55dvh]">
 			<img
 				src="/images/officialgsbe_cover_about.jpeg"
 				alt="hero"
