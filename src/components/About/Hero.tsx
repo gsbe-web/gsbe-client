@@ -10,7 +10,7 @@ export const AboutHero = () => {
 			/>
 
 			<div>
-				<span className="text-[#FFFFFF]  absolute left-1/5 top-2/7 ">
+				<span className="text-[#FFFFFF]  absolute left-1/8 lg:left-1/5 top-1/7  lg:top-2/7 ">
 					<p className="font-anton text-8xl">We Are GSBE !</p>
 					<p className="font-light pt-3">
 						Representing a community from academia, healthcare and industry

@@ -3,11 +3,11 @@ import { Link } from "react-router";
 
 export const Introduction = () => {
 	return (
-		<div className="mx-25 p-16 mt-2 text-center text-[#254152] min-h-[90vh] bg-white">
+		<div className="lg:mx-25 py-16 px-2 lg:p-16 mt-2 text-center text-[#254152] min-h-[90vh] bg-white">
 			<div className="uppercase font-anton text-5xl font-extralight">
 				Who we are
 			</div>
-			<section className="pt-6 font-light text-base/8 tracking-wide w-2/3 mx-auto">
+			<section className="pt-6 font-light text-base/8 tracking-wide lg:w-2/3 mx-auto">
 				<p>
 					The Ghana Society of Biomedical Engineers (GSBE) is the professional
 					body dedicated to uniting, supporting, and advancing biomedical
@@ -22,7 +22,7 @@ export const Introduction = () => {
 					health goals and the global biomedical engineering community.{" "}
 				</p>
 			</section>
-			<div className="w-1/2 h-auto mx-auto py-10">
+			<div className="lg:w-1/2 h-auto lg:mx-auto py-10">
 				<img
 					src="/images/officialgsbe_cover_about.jpeg"
 					alt="group-photo"
