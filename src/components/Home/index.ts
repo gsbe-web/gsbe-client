@@ -5,3 +5,4 @@ export * from "./NewsletterNSubscribe";
 export * from "./OurEvents";
 export * from "./ScrollToggle";
 export * from "./WelcomeAnimation";
+export * from "./WelcomeCarousel";

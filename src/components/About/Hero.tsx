@@ -3,22 +3,22 @@ import { Link } from "react-router";
 export const AboutHero = () => {
 	return (
 		<div>
-			<div className="w-dvw h-[55dvh] relative after:content-[''] after:absolute after:inset-0  after:bg-black/50">
+			<div className="relative h-[55dvh] w-dvw after:absolute after:inset-0 after:bg-black/50 after:content-['']">
 				<img
 					src="/images/officialgsbe_cover_about.jpeg"
 					alt="hero"
-					className="object-cover w-full h-full"
+					className="h-full w-full object-cover"
 				/>
 			</div>
 
 			<div>
-				<span className="text-[#FFFFFF]  absolute left-1/8 lg:left-1/5 top-1/7  lg:top-2/7 ">
+				<span className="absolute top-1/7 left-1/8 text-[#FFFFFF] lg:top-2/7 lg:left-1/5">
 					<p className="font-anton text-8xl">We Are GSBE !</p>
-					<p className="font-light pt-3">
+					<p className="pt-3 font-light">
 						Representing a community from academia, healthcare and industry
 					</p>
 				</span>
-				<span className="hover:underline hover:bg-neutral-400 p-5 py-3 rounded-xl text-[#FFFFFF] font-medium tracking-wider font-jost absolute left-1/5 top-3/7">
+				<span className="font-jost absolute top-3/7 left-1/5 rounded-xl p-5 py-3 font-medium tracking-wider text-[#FFFFFF] hover:bg-neutral-400 hover:underline">
 					<Link to="/">Become a Member</Link>
 				</span>
 			</div>
