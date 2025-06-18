@@ -5,14 +5,12 @@ import { useState } from "react";
 import { NavLink, useLocation } from "react-router";
 
 export const Header = () => {
-	const location = useLocation();
-	const selectedLink = location.pathname;
 	const [menuOpen, setMenuOpen] = useState(false);
 
 	const Logo = () => {
 		return (
 			<NavLink className="hover:text-[#C25144]" to="/">
-				<div className="Logo ml-4 flex h-14 w-14 items-center justify-start">
+				<div className="Logo ml-4 flex h-12 w-12 items-center justify-start">
 					<img alt="logo" src="/images/logo.webp" title="GSBE" />
 				</div>
 			</NavLink>
@@ -23,7 +21,9 @@ export const Header = () => {
 		return (
 			<NavLink className="hover:text-[#C25144]" to="/">
 				<div className="SiteName ml-2 flex items-center">
-					<h1 className="text-xl font-extrabold">GSBE</h1>
+					<h1 className=" tracking-widest font-[1000] font-[sans-serif]">
+						GSBE
+					</h1>
 				</div>
 			</NavLink>
 		);
@@ -31,6 +31,22 @@ export const Header = () => {
 
 	const Navigation = (props: { isOverlay: boolean }) => {
 		const { isOverlay } = props;
+
+		const loc = useLocation();
+
+		const activeLink = "text-[#D55342]";
+		const inactiveLink = "text-white";
+		const isLinkActive = (path: string) => loc.pathname === path;
+
+		const linksCollection = [
+			{ path: "/", view: "Home" },
+			{ path: "/about", view: "About GSBE" },
+			{ path: "/support", view: "Dues" },
+			{ path: "/events", view: "Events" },
+			{ path: "/blogs", view: "Publications" },
+			{ path: "/contact", view: "Contact Us" },
+		];
+
 		return (
 			<nav
 				className={`flex flex-col items-center space-y-4 ${isOverlay ? "fixed inset-0 flex h-screen flex-col items-center border-t-white bg-[#254152] pt-44 text-white md:inset-96 md:top-[4.5rem] md:right-0 md:h-fit md:w-1/2 md:border-t md:py-14" : "text-base lg:flex-row lg:space-y-0 lg:space-x-8"}`}
@@ -44,45 +60,30 @@ export const Header = () => {
 						<FontAwesomeIcon icon={faTimes} size="lg" />
 					</button>
 				)}
-				{[
-					"/",
-					"/about",
-					"/events",
-					"/blogs",
-					"/contact",
-					"/support",
-					"/executives",
-				].map((path) => (
-					<div className="relative" key={path}>
-						<NavLink
-							className={`text-base tracking-wide hover:text-[#C25144] ${selectedLink === path ? "text-[#C25144]" : ""} py-2`}
-							onClick={() => setMenuOpen(false)}
-							to={path}
-						>
-							{path === "/"
-								? "Home"
-								: path.split("/")[1]?.charAt(0).toUpperCase() +
-									path.slice(2)}{" "}
-							{/* Format link text */}
-						</NavLink>
-						{/* Horizontal line under the link only for overlay */}
-						{/* {isOverlay && <div className='absolute left-1/2 transform -translate-x-1/2 w-[75vw] h-px bg-gray-300 mt-1' />} */}
-					</div>
+				{linksCollection.map((link) => (
+					<NavLink
+						key={link.path}
+						to={link.path}
+						className={`text-base font-light tracking-wide hover:text-[#D55342] ${isLinkActive(link.path) ? activeLink : inactiveLink} py-2`}
+					>
+						{link.view}
+					</NavLink>
 				))}
 			</nav>
 		);
 	};
 
 	return (
-		<header className="fixed top-0 mx-auto flex w-full items-center bg-[#254152] p-2 text-[#FFFFFF]">
-			<div className="flex items-center">
+		<header className="fixed top-0 w-full grid grid-cols-[1fr_2fr_1fr] bg-[#254152] py-4  text-[#FFFFFF] z-1000">
+			<div className="flex items-center justify-end">
 				<Logo />
 				<SiteName />
 			</div>
 			{/* Center the navigation on larger screens */}
-			<div className="hidden flex-grow lg:flex lg:justify-center">
+			<div className="hidden  lg:flex lg:justify-center pl-20">
 				<Navigation isOverlay={false} />
 			</div>
+
 			{/* Hamburger menu button for smaller screens */}
 			<button
 				className="mr-4 ml-auto text-2xl lg:hidden"
