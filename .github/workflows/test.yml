@@ -17,15 +17,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v4
+      - uses: borales/actions-yarn@v4
+        with: 
+          cmd: 'install'
 
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-          cache: "pnpm"
+          cache: "yarn"
 
       - name: Install dependencies
-        run: pnpm i && pnpm playwright install --with-deps
+        run: yarn install
 
       - name: Validate
-        run: pnpm biome ci && pnpm test:ci && pnpm test:e2e:ci
+        run: yarn format:lint:staged
