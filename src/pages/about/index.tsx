@@ -1,10 +1,10 @@
-import { AboutHero } from "@components/About";
+import { AboutHero, Introduction } from "@components/About";
 
 export function About() {
 	return (
 		<div className="min-h-screen bg-[#EAEAE8]">
 			<AboutHero />
-			{/* <AboutUs /> */}
+			<Introduction />
 		</div>
 	);
 }
