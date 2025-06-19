@@ -38,7 +38,7 @@ export const Header = () => {
 		const inactiveLink = "text-white";
 		const isLinkActive = (path: string) => loc.pathname === path;
 
-		const linksCollection = [
+		const navlinks = [
 			{ path: "/", view: "Home" },
 			{ path: "/about", view: "About GSBE" },
 			{ path: "/support", view: "Dues" },
@@ -60,7 +60,7 @@ export const Header = () => {
 						<FontAwesomeIcon icon={faTimes} size="lg" />
 					</button>
 				)}
-				{linksCollection.map((link) => (
+				{navlinks.map((link) => (
 					<NavLink
 						key={link.path}
 						to={link.path}
