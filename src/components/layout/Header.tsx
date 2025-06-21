@@ -5,12 +5,14 @@ import { useState } from "react";
 import { NavLink, useLocation } from "react-router";
 
 export const Header = () => {
+	const location = useLocation();
+	const selectedLink = location.pathname;
 	const [menuOpen, setMenuOpen] = useState(false);
 
 	const Logo = () => {
 		return (
 			<NavLink className="hover:text-[#C25144]" to="/">
-				<div className="Logo ml-4 flex h-12 w-12 items-center justify-start">
+				<div className="Logo ml-4 flex h-14 w-14 items-center justify-start">
 					<img alt="logo" src="/images/logo.webp" title="GSBE" />
 				</div>
 			</NavLink>
@@ -21,9 +23,7 @@ export const Header = () => {
 		return (
 			<NavLink className="hover:text-[#C25144]" to="/">
 				<div className="SiteName ml-2 flex items-center">
-					<h1 className=" tracking-widest font-[1000] font-[sans-serif]">
-						GSBE
-					</h1>
+					<h1 className="text-xl font-extrabold">GSBE</h1>
 				</div>
 			</NavLink>
 		);
@@ -31,7 +31,7 @@ export const Header = () => {
 
 	const Navigation = (props: { isOverlay: boolean }) => {
 		const { isOverlay } = props;
-
+    
 		const loc = useLocation();
 
 		const activeLink = "text-[#D55342]";
@@ -46,7 +46,7 @@ export const Header = () => {
 			{ path: "/blogs", view: "Publications" },
 			{ path: "/contact", view: "Contact Us" },
 		];
-
+      
 		return (
 			<nav
 				className={`flex flex-col items-center space-y-4 ${isOverlay ? "fixed inset-0 flex h-screen flex-col items-center border-t-white bg-[#254152] pt-44 text-white md:inset-96 md:top-[4.5rem] md:right-0 md:h-fit md:w-1/2 md:border-t md:py-14" : "text-base lg:flex-row lg:space-y-0 lg:space-x-8"}`}
@@ -80,10 +80,9 @@ export const Header = () => {
 				<SiteName />
 			</div>
 			{/* Center the navigation on larger screens */}
-			<div className="hidden  lg:flex lg:justify-center pl-20">
+			<div className="hidden flex-grow lg:flex lg:justify-center">
 				<Navigation isOverlay={false} />
 			</div>
-
 			{/* Hamburger menu button for smaller screens */}
 			<button
 				className="mr-4 ml-auto text-2xl lg:hidden"
