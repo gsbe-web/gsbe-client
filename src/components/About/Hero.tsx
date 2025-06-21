@@ -19,7 +19,7 @@ export const AboutHero = () => {
 					</p>
 				</span>
 				<span className="font-jost absolute top-3/7 left-1/5 rounded-xl p-5 py-3 font-medium tracking-wider text-[#FFFFFF] hover:bg-neutral-400 hover:underline">
-					<Link to="/">Become a Member</Link>
+					<Link to="/about/membership">Become a Member</Link>
 				</span>
 			</div>
 		</div>
