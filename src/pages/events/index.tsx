@@ -1,7 +1,7 @@
 import { useEvents } from "@api/events";
 import { EventCard } from "@components/Events";
 import { Paginated, Spinner } from "@components/shared";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 
 export function Events() {
@@ -10,9 +10,11 @@ export function Events() {
 	const page = pageParam ? Number.parseInt(pageParam, 10) : 1;
 	const [currentPage, setCurrentPage] = useState(page);
 
-	if (!pageParam) {
-		setSearchParams({ page: `${currentPage}` });
-	}
+	useEffect(() => {
+		if (!pageParam) {
+			setSearchParams({ page: `${currentPage}` });
+		}
+	}, [pageParam, currentPage, setSearchParams]);
 
 	const {
 		data: events,

@@ -6,6 +6,7 @@ import {
 	PaginationItem,
 	PaginationLink,
 } from "@components/ui/pagination";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useSearchParams } from "react-router";
 
 type PaginationProps = {
@@ -44,7 +45,7 @@ export function Paginated(props: PaginationProps) {
 						onClick={handlePreviousPage}
 						className="cursor-pointer"
 					>
-						Prev
+						<ArrowLeft />
 					</Button>
 				</PaginationItem>
 				{Array.from(
@@ -69,7 +70,7 @@ export function Paginated(props: PaginationProps) {
 						disabled={currentPage + 1 > totalPages}
 						className="cursor-pointer"
 					>
-						Next
+						<ArrowRight />
 					</Button>
 				</PaginationItem>
 			</PaginationContent>

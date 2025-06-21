@@ -3,6 +3,11 @@ import { logger } from "@loggers";
 import { http } from "msw";
 
 export const handlers = [
+	http.get(/(manifest)/, ({ request }) => {
+		logger.info("Fetched", request.url);
+		return;
+	}),
+
 	http.get("https://lh3.googleusercontent.com/*", ({ request }) => {
 		logger.info("Fetched", request.url);
 		return;

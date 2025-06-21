@@ -1,6 +1,4 @@
-/** biome-ignore-all lint/correctness/noUnusedVariables: fine to use */
-/** biome-ignore-all lint/correctness/useExhaustiveDependencies: Allow */
-/** biome-ignore-all lint/a11y/useSemanticElements: its cool */
+/** biome-ignore-all lint/a11y/useSemanticElements: allow */
 import { cn } from "@components/lib/utils";
 import { Button } from "@components/ui/button";
 import useEmblaCarousel, {
@@ -58,13 +56,15 @@ function Carousel({
     },
     plugins,
   );
-  const [canScrollPrev, _setCanScrollPrev] = React.useState(false);
-  const [canScrollNext, _setCanScrollNext] = React.useState(false);
+  const [canScrollPrev, setCanScrollPrev] = React.useState(false);
+  const [canScrollNext, setCanScrollNext] = React.useState(false);
 
   const onSelect = React.useCallback((cApi: CarouselApi) => {
     if (!cApi) {
       return;
     }
+    setCanScrollPrev(cApi.canScrollPrev());
+    setCanScrollNext(cApi.canScrollNext());
   }, []);
 
   const scrollPrev = React.useCallback(() => {
@@ -92,12 +92,20 @@ function Carousel({
     if (!(api && setApi)) {
       return;
     }
+    setApi(api);
   }, [api, setApi]);
 
   React.useEffect(() => {
     if (!api) {
       return;
     }
+    onSelect(api);
+    api.on("reInit", onSelect);
+    api.on("select", onSelect);
+
+    return () => {
+      api?.off("select", onSelect);
+    };
   }, [api, onSelect]);
 
   return (
