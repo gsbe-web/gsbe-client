@@ -10,6 +10,7 @@ import { EventDetails } from "@pages/events/slug";
 import { RsvpForm } from "@pages/events/slug/rsvp-form";
 import { OurExecutives } from "@pages/executives";
 import { Home } from "@pages/home";
+import { Membership } from "@pages/membership";
 import { ErrorPage } from "@pages/not-found";
 import { Publications } from "@pages/publications";
 import { Support } from "@pages/support";
@@ -32,6 +33,8 @@ export function App() {
 
 							<Route path="about">
 								<Route element={<About />} index={true} />
+								<Route element={<OurExecutives />} path="executives" />
+								<Route element={<Membership />} path="membership" />
 							</Route>
 
 							<Route path="blogs">
@@ -48,7 +51,6 @@ export function App() {
 							<Route element={<Contact />} path="contact" />
 							<Route element={<Publications />} path="publications" />
 							<Route element={<Support />} path="/support" />
-							<Route element={<OurExecutives />} path="executives" />
 							<Route element={<ErrorPage />} path="*" />
 						</Routes>
 					</Layout>
