@@ -6,7 +6,7 @@ import { NavLink, useLocation } from "react-router";
 
 export const Header = () => {
 	const location = useLocation();
-	const selectedLink = location.pathname;
+	const _selectedLink = location.pathname;
 	const [menuOpen, setMenuOpen] = useState(false);
 
 	const Logo = () => {
@@ -31,6 +31,22 @@ export const Header = () => {
 
 	const Navigation = (props: { isOverlay: boolean }) => {
 		const { isOverlay } = props;
+    
+		const loc = useLocation();
+
+		const activeLink = "text-[#D55342]";
+		const inactiveLink = "text-white";
+		const isLinkActive = (path: string) => loc.pathname === path;
+
+		const navlinks = [
+			{ path: "/", view: "Home" },
+			{ path: "/about", view: "About GSBE" },
+			{ path: "/support", view: "Dues" },
+			{ path: "/events", view: "Events" },
+			{ path: "/blogs", view: "Publications" },
+			{ path: "/contact", view: "Contact Us" },
+		];
+      
 		return (
 			<nav
 				className={`flex flex-col items-center space-y-4 ${isOverlay ? "fixed inset-0 flex h-screen flex-col items-center border-t-white bg-[#254152] pt-44 text-white md:inset-96 md:top-[4.5rem] md:right-0 md:h-fit md:w-1/2 md:border-t md:py-14" : "text-base lg:flex-row lg:space-y-0 lg:space-x-8"}`}
@@ -44,30 +60,14 @@ export const Header = () => {
 						<FontAwesomeIcon icon={faTimes} size="lg" />
 					</button>
 				)}
-				{[
-					"/",
-					"/about",
-					"/events",
-					"/blogs",
-					"/contact",
-					"/support",
-					"/executives",
-				].map((path) => (
-					<div className="relative" key={path}>
-						<NavLink
-							className={`text-base tracking-wide hover:text-[#C25144] ${selectedLink === path ? "text-[#C25144]" : ""} py-2`}
-							onClick={() => setMenuOpen(false)}
-							to={path}
-						>
-							{path === "/"
-								? "Home"
-								: path.split("/")[1]?.charAt(0).toUpperCase() +
-									path.slice(2)}{" "}
-							{/* Format link text */}
-						</NavLink>
-						{/* Horizontal line under the link only for overlay */}
-						{/* {isOverlay && <div className='absolute left-1/2 transform -translate-x-1/2 w-[75vw] h-px bg-gray-300 mt-1' />} */}
-					</div>
+				{navlinks.map((link) => (
+					<NavLink
+						key={link.path}
+						to={link.path}
+						className={`text-base font-light tracking-wide hover:text-[#D55342] ${isLinkActive(link.path) ? activeLink : inactiveLink} py-2`}
+					>
+						{link.view}
+					</NavLink>
 				))}
 			</nav>
 		);
