@@ -5,8 +5,6 @@ import { useState } from "react";
 import { NavLink, useLocation } from "react-router";
 
 export const Header = () => {
-	const location = useLocation();
-	const _selectedLink = location.pathname;
 	const [menuOpen, setMenuOpen] = useState(false);
 
 	const Logo = () => {
@@ -31,7 +29,7 @@ export const Header = () => {
 
 	const Navigation = (props: { isOverlay: boolean }) => {
 		const { isOverlay } = props;
-    
+
 		const loc = useLocation();
 
 		const activeLink = "text-[#D55342]";
@@ -43,10 +41,10 @@ export const Header = () => {
 			{ path: "/about", view: "About GSBE" },
 			{ path: "/support", view: "Dues" },
 			{ path: "/events", view: "Events" },
-			{ path: "/blogs", view: "Publications" },
+			{ path: "/publications", view: "Publications" },
 			{ path: "/contact", view: "Contact Us" },
 		];
-      
+
 		return (
 			<nav
 				className={`flex flex-col items-center space-y-4 ${isOverlay ? "fixed inset-0 flex h-screen flex-col items-center border-t-white bg-[#254152] pt-44 text-white md:inset-96 md:top-[4.5rem] md:right-0 md:h-fit md:w-1/2 md:border-t md:py-14" : "text-base lg:flex-row lg:space-y-0 lg:space-x-8"}`}
@@ -74,7 +72,7 @@ export const Header = () => {
 	};
 
 	return (
-		<header className="fixed top-0 w-full grid grid-cols-2 lg:grid-cols-[1fr_2fr_1fr] bg-[#254152] py-4  text-[#FFFFFF] z-1000">
+		<header className="fixed top-0 z-1000 grid w-full grid-cols-2 bg-[#254152] py-4 text-[#FFFFFF] lg:grid-cols-[1fr_2fr_1fr]">
 			<div className="flex items-center lg:justify-end">
 				<Logo />
 				<SiteName />

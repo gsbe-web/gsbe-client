@@ -63,7 +63,7 @@ export const BlogCard: React.FC<BlogDetailProps> = (props) => {
 					</div>
 					<Link
 						onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-						to={`/blogs/${blogPost.slug}`}
+						to={`/publications/${blogPost.slug}`}
 					>
 						<div className="my-3 cursor-pointer pt-2 text-xl font-bold tracking-wider text-[#254152] hover:text-[#636362]">
 							{blogPost.title}

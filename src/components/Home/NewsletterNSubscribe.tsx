@@ -19,7 +19,7 @@ export const NewsletterSubscribe = () => {
 					</p>
 					<Link
 						className="items-center rounded-full p-4 hover:border hover:border-[#4dbea8] hover:bg-[#4dbea8]"
-						to="/blog"
+						to="/publications"
 					>
 						Read More{" "}
 						<FontAwesomeIcon className="text-sm" icon={faAngleRight} />
@@ -33,7 +33,7 @@ export const NewsletterSubscribe = () => {
 					<form className="flex justify-center">
 						<Input
 							autoComplete="email"
-							className="w-1/2 rounded-none border-0 border-b bg-[#254152] p-6 placeholder:text-white focus:border-b-2 focus:border-[#45B29D] md:w-1/4"
+							className="w-50 rounded-none border-0 border-b bg-[#254152] p-6 placeholder:text-white focus:border-b-2 focus:border-[#45B29D]"
 							name="email"
 							placeholder="Enter your email here"
 							type="email"
