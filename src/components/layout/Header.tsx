@@ -6,7 +6,7 @@ import { NavLink, useLocation } from "react-router";
 
 export const Header = () => {
 	const location = useLocation();
-	const selectedLink = location.pathname;
+	const _selectedLink = location.pathname;
 	const [menuOpen, setMenuOpen] = useState(false);
 
 	const Logo = () => {
