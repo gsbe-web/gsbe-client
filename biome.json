@@ -54,7 +54,8 @@
             "useExplicitType": "off",
             "useForComponent": "off",
             "useExportsLast": "off",
-            "useSortedClasses": "off"
+            "useSortedClasses": "off",
+            "noImportantStyles": "off"
           },
           "suspicious": {
             "noReactSpecificProps": "off"
