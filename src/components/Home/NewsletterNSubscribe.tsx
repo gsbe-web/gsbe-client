@@ -1,3 +1,4 @@
+import { Button, Input } from "@components/ui";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router";
@@ -18,7 +19,7 @@ export const NewsletterSubscribe = () => {
 					</p>
 					<Link
 						className="items-center rounded-full p-4 hover:border hover:border-[#4dbea8] hover:bg-[#4dbea8]"
-						to="/blog"
+						to="/publications"
 					>
 						Read More{" "}
 						<FontAwesomeIcon className="text-sm" icon={faAngleRight} />
@@ -29,20 +30,23 @@ export const NewsletterSubscribe = () => {
 						Subscribe
 					</h1>
 					<p className="text-sm font-light">Subscribe to Our Newsletter </p>
-					<form>
-						<input
-							className="border-b-2 border-[#FFFFFF] bg-[#254152] px-4 py-2 hover:border-[#F4CE50] focus:border-[#45B29D]"
+					<form className="flex justify-center">
+						<Input
+							autoComplete="email"
+							className="w-50 rounded-none border-0 border-b bg-[#254152] p-6 placeholder:text-white focus:border-b-2 focus:border-[#45B29D]"
+							name="email"
 							placeholder="Enter your email here"
 							type="email"
 						/>
 					</form>
 
-					<button
-						className="items-center rounded-full px-20 py-4 text-sm hover:bg-[#2E4D5E]"
+					<Button
+						variant="default"
+						className="cursor-pointer items-center rounded-full bg-transparent text-sm hover:bg-[#2E4D5E]"
 						type="button"
 					>
 						Join
-					</button>
+					</Button>
 				</div>
 			</div>
 		</div>

@@ -12,7 +12,6 @@ import { OurExecutives } from "@pages/executives";
 import { Home } from "@pages/home";
 import { Membership } from "@pages/membership";
 import { ErrorPage } from "@pages/not-found";
-import { Publications } from "@pages/publications";
 import { Support } from "@pages/support";
 import { Suspense } from "react";
 import { ErrorBoundary, type FallbackProps } from "react-error-boundary";
@@ -37,7 +36,7 @@ export function App() {
 								<Route element={<Membership />} path="membership" />
 							</Route>
 
-							<Route path="blogs">
+							<Route path="publications">
 								<Route element={<Blog />} index={true} />
 								<Route element={<OpenedBlog />} path=":slug" />
 							</Route>
@@ -49,7 +48,6 @@ export function App() {
 							</Route>
 
 							<Route element={<Contact />} path="contact" />
-							<Route element={<Publications />} path="publications" />
 							<Route element={<Support />} path="/support" />
 							<Route element={<ErrorPage />} path="*" />
 						</Routes>

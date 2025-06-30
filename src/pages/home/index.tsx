@@ -3,13 +3,13 @@ import {
 	MissionStatement,
 	NewsletterSubscribe,
 	OurEvents,
-	WelcomeAnimation,
+	WelcomeCarousel,
 } from "@components/Home";
 
 export function Home() {
 	return (
-		<div className="flex w-full flex-col gap-4">
-			<WelcomeAnimation />
+		<div className="flex w-full flex-col gap-4 py-10">
+			<WelcomeCarousel />
 			<MissionStatement />
 			<OurEvents />
 			<LatestNews />

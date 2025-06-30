@@ -1,3 +1,4 @@
+import { Button, Input } from "@components/ui";
 import { Link } from "react-router";
 
 const ContactUs = () => {
@@ -71,19 +72,22 @@ const Subscribe = () => {
 		<div className="flex text-xs text-[#254152]">
 			<div className="flex flex-col gap-4">
 				<h1 className="text-lg font-black">SUBSCRIBE</h1>
-				<form className="border-transparent focus-within:border lg:space-x-3">
-					<input
-						className="w-1/2 border-0 border-b-2 border-[#87979F] bg-[#EAEAE8] py-2 text-sm font-light placeholder-[#747473] hover:border-b-4 focus:border-[#636362] focus:outline-none"
-						placeholder="Email here "
+				<form className="flex flex-col items-center gap-3 lg:flex-row">
+					<Input
+						autoComplete="email"
+						className="w-full rounded-none border-0 border-b bg-[#EAEAE8] py-6 shadow-none placeholder:text-[#455D6B] focus:border-b-2 focus:border-[#87979F]"
+						name="email"
+						placeholder="Email here"
 						type="text"
 					/>
 
-					<button
-						className="rounded-full border-[#254152] bg-[#254152] px-7 py-2 font-medium text-[#ffffff] hover:border hover:bg-white hover:text-[#254152]"
+					<Button
+						variant="default"
+						className="cursor-pointer rounded-full bg-[#254152] font-medium hover:bg-[#1e3544]"
 						type="button"
 					>
 						Join
-					</button>
+					</Button>
 				</form>
 			</div>
 		</div>
