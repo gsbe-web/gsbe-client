@@ -55,12 +55,12 @@ const Pointer = ({ header, detail }: MembershipGuide) => {
 
 export const HowTo = () => {
 	return (
-		<div className="pt-16 px-32 text-[#254152] ">
+		<div className="pt-16 px-2 md:px-32 text-[#254152] ">
 			<div className="text-center font-anton text-4xl">
 				How to Become a Member
 			</div>
-			<div className="grid grid-cols-2 py-10  ">
-				<div className="pl-20">
+			<div className="grid lg:grid-cols-2 py-10  ">
+				<div className="md:pl-10 lg:pl-20">
 					<ol>
 						{steps.map((step) => (
 							<Pointer
@@ -71,7 +71,7 @@ export const HowTo = () => {
 						))}
 					</ol>
 				</div>
-				<div className="px-10 grid grid-rows-[2fr_1fr]">
+				<div className="px-2 md:px-10 grid grid-rows-[2fr_1fr]">
 					<div className="w-full h-auto">
 						<img
 							src="/images/officialgsbe_cover_about.jpeg"

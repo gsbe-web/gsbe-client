@@ -108,7 +108,7 @@ export const Team = () => {
 	return (
 		<section className="md:p-16 lg:p-10">
 			<div className="flex flex-col gap-8 bg-white md:py-10">
-				<h2 className=" text-center text-4xl uppercase tracking-[7px] font-[900] text-[#D55342] pb-8">
+				<h2 className=" text-center text-2xl md:text-4xl uppercase tracking-[7px] font-[900] text-[#D55342] md:pb-8 block pt-4">
 					Meet Our Executives
 				</h2>
 
