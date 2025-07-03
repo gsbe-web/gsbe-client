@@ -1,16 +1,29 @@
-import { Link } from "react-router";
+import { Button } from "@components/ui";
+import { ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router";
 
 export const NotFound = () => {
+	const navigate = useNavigate();
+
 	return (
-		<div className="flex h-full flex-col items-center justify-center">
-			<h1 className="mb-4 text-6xl font-bold text-red-600">404</h1>
-			<h2 className="mb-2 text-3xl font-semibold">Page Not Found</h2>
-			<p className="mb-8 text-lg">
-				The page you are looking for does not exist.
+		<main className="flex min-h-screen flex-col items-center justify-center gap-8 text-center">
+			<p className="text-base font-semibold text-[#254152]">404</p>
+			<h1 className="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">
+				Page not found
+			</h1>
+			<p className="text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
+				Sorry, we couldn’t find the page you’re looking for.
 			</p>
-			<Link className="text-lg text-blue-500 hover:underline" to="/">
-				Go to Homepage
-			</Link>
-		</div>
+			<div className="flex items-center justify-center gap-x-6">
+				<Button
+					onClick={() => navigate(-1)}
+					variant="default"
+					className="flex cursor-pointer items-center gap-2 rounded-md bg-[#254152] font-semibold hover:bg-[#1B313F]"
+				>
+					<ArrowLeft />
+					Go back home
+				</Button>
+			</div>
+		</main>
 	);
 };
