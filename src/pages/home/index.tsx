@@ -3,6 +3,7 @@ import {
 	MissionStatement,
 	OurEvents,
 	Partners,
+	Reviews,
 	WelcomeCarousel,
 } from "@components/Home";
 
@@ -13,6 +14,7 @@ export function Home() {
 			<MissionStatement />
 			<OurEvents />
 			<LatestNews />
+			<Reviews />
 			<Partners />
 		</div>
 	);
