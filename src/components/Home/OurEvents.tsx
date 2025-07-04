@@ -15,8 +15,8 @@ export const OurEvents = () => {
 	}
 
 	return (
-		<div className="bg-[#FFFFFF] p-4 pb-28">
-			<div className="pt-32 pb-6 text-center text-4xl font-extrabold tracking-wider text-[#254152] uppercase">
+		<div className="bg-[#FFFFFF]  pb-6">
+			<div className="bg-[#FFFFFF] py-6 text-center text-4xl font-extrabold tracking-wider text-[#254152] uppercase">
 				Our Events
 			</div>
 			<MainEvent />

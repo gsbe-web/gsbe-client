@@ -1,8 +1,8 @@
 import {
 	LatestNews,
 	MissionStatement,
-	NewsletterSubscribe,
 	OurEvents,
+	Partners,
 	WelcomeCarousel,
 } from "@components/Home";
 
@@ -13,7 +13,7 @@ export function Home() {
 			<MissionStatement />
 			<OurEvents />
 			<LatestNews />
-			<NewsletterSubscribe />
+			<Partners />
 		</div>
 	);
 }
