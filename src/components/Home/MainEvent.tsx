@@ -2,13 +2,13 @@ import { Link } from "react-router";
 
 export const MainEvent = () => {
 	return (
-		<div className="bg-[#EAEAE8] px-2 pt-2 pb-10">
+		<div className="bg-[#FFFFFF] px-2 pt-2 pb-10">
 			<div>
 				<img alt="Conference flyer" src="/images/gsbe_conference.webp" />
 			</div>
 			<div>
-				<div className="flex flex-col justify-between gap-10 py-8 text-justify text-sm leading-relaxed font-light text-[#2F2F2E] md:flex-row">
-					<span className="w-full">
+				<div className="flex flex-col justify-between gap-10 py-8 text-justify text-sm leading-relaxed font-light text-[#2F2F2E] md:flex-row px-96">
+					<span className="w-2/3">
 						The Ghana Society of Biomedical engineers is organizing our 4th
 						National biomedical engineering conference
 						<br /> Ghana Society of Biomedical Engineers (GSBE) is a
@@ -20,7 +20,7 @@ export const MainEvent = () => {
 						skills of Engineering with medicine, biological science and
 						technology to improve healthcare diagnosis and treatment.
 					</span>
-					<span className="w-full">
+					<span className="w-2/3">
 						As part of our constitutional mandate, it is said to have its annual
 						conference every ensuing year to keep account of it&apos;s year
 						under review. This year&apos;s conference marks the 4th annual
