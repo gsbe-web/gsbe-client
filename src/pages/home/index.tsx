@@ -8,7 +8,7 @@ import {
 
 export function Home() {
 	return (
-		<div className="flex w-full flex-col gap-4 py-10">
+		<div className="flex w-full flex-col ">
 			<WelcomeCarousel />
 			<MissionStatement />
 			<OurEvents />
