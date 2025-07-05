@@ -1,10 +1,10 @@
 export const Heading = () => {
 	return (
-		<div className="text-center py-8">
-			<h1 className="uppercase text-[#D55342] tracking widest text-5xl">
+		<div className="mt-8">
+			<h1 className="tracking widest text-5xl text-[#D55342] uppercase">
 				pay your membership dues
 			</h1>
-			<small className="font-semibold text-lg">
+			<small className="text-lg font-semibold">
 				Ensure your membership remains active by paying your dues on time.
 			</small>
 		</div>

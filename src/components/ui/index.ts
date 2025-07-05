@@ -12,5 +12,6 @@ export * from './phone-input';
 export * from './popover';
 export * from './scroll-area';
 export * from './sonner';
+export * from './tabs';
 export * from './textarea';
 export * from './toast-icons';

@@ -1,6 +1,7 @@
 export * from "./Categories";
 export * from "./DonateOnline";
 export * from "./Heading";
+export * from "./PaymentForm";
 export * from "./SupportUs";
 export * from "./WaysToDonate/ByMail";
 export * from "./WaysToDonate/ByPhone";
