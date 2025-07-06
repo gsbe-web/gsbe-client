@@ -2,18 +2,18 @@ import { useState } from "react";
 
 const DuesTable = () => {
 	return (
-		<table className="border border-collapse  border-gray-400 mx-auto my-2 text-center">
-			<thead className="text-white bg-black">
+		<table className="mx-auto my-2 w-full border-collapse border border-gray-400 text-center">
+			<thead className="bg-black text-white">
 				<tr>
-					<th className="border border-gray-300 px-6 py-2 w-1/2">
+					<th className="w-1/2 border border-gray-300 px-6 py-2">
 						Membership Category
 					</th>
-					<th className="border border-gray-300 px-6 py-2 w-1/2">
+					<th className="w-1/2 border border-gray-300 px-6 py-2">
 						Annual Dues (GHS)
 					</th>
 				</tr>
 			</thead>
-			<tbody className="text-black bg-white">
+			<tbody className="bg-white text-black">
 				<tr>
 					<td className="border border-gray-300 px-6 py-2">Student Member</td>
 					<td className="border border-gray-300 px-6 py-2">
@@ -41,7 +41,7 @@ const PaymentInstructions = () => {
 	const [isEllipsisOpen, setIsEllipsisOpen] = useState(false);
 
 	return (
-		<div className="text-black font-light text-justify mx-auto w-2/3">
+		<div className="mx-auto w-full text-justify font-light text-black md:w-2/3">
 			{isEllipsisOpen ? (
 				<>
 					<h2 className="inline-block py-6 text-pretty">
@@ -49,7 +49,7 @@ const PaymentInstructions = () => {
 						of how to confirm your dues, make payment via Mobile Money or bank
 						transfer, and get your membership updated.
 					</h2>
-					<ol className="list-decimal ml-6">
+					<ol className="ml-6 list-decimal">
 						<li className="pb-6">
 							<h3>Confirm Amount Due: </h3>
 							<p>
@@ -123,12 +123,12 @@ const PaymentInstructions = () => {
 
 export const AnnualMembershipDues = () => {
 	return (
-		<div className="bg-[#EAEAE8]  p-4">
+		<div className="w-full p-4">
 			<div>
-				<h1 className="text-2xl tracking tracking-widest uppercase text-[#2F2F2E] text-center">
+				<h1 className="tracking text-center text-2xl tracking-widest text-[#2F2F2E] uppercase">
 					Annual Membership Dues
 				</h1>
-				<div>
+				<div className="w-full">
 					<DuesTable />
 					<PaymentInstructions />
 				</div>

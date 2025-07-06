@@ -1,8 +1,4 @@
-import {
-	AnnualMembershipDues,
-	Heading,
-	PaymentForm,
-} from "@components/Support";
+import { AnnualMembershipDues, Heading, Payment } from "@components/Support";
 import { useEffect } from "react";
 
 export function Support() {
@@ -10,11 +6,12 @@ export function Support() {
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	}, []);
 	return (
-		<div className="w-full">
+		<div className="w-full bg-[#EAEAE8]">
 			<div className="w-full md:px-12 lg:px-20">
-				<main className="flex w-full flex-col gap-8 border border-black text-center text-[#254152]">
+				<main className="flex w-full flex-col gap-8 bg-white text-center text-[#254152]">
 					<Heading />
-					<PaymentForm />
+					<Payment />
+					<div className="mx-auto mt-10 w-3/4 border-2" />
 					<AnnualMembershipDues />
 				</main>
 			</div>

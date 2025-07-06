@@ -1,101 +1,162 @@
+/** biome-ignore-all lint/nursery/noExcessiveLinesPerFunction: cool */
+import { cn } from "@components/lib/utils";
 import {
 	Button,
-	Card,
-	CardContent,
-	CardDescription,
-	CardFooter,
-	CardHeader,
-	CardTitle,
+	DropdownMenuContent,
+	DropdownMenuLabel,
+	DropdownMenuRadioGroup,
+	DropdownMenuRadioItem,
+	DropdownMenuSeparator,
+	DropdownMenuTrigger,
+	Form,
+	FormControl,
+	FormField,
+	FormItem,
+	FormLabel,
+	FormMessage,
 	Input,
 	Label,
-	Tabs,
-	TabsContent,
-	TabsList,
-	TabsTrigger,
 } from "@components/ui";
-import {
-	faApplePay,
-	faCcMastercard,
-	faCcVisa,
-	faGooglePay,
-	faPaypal,
-} from "@fortawesome/free-brands-svg-icons";
-import { faFileInvoice } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useId } from "react";
+import { valibotResolver } from "@hookform/resolvers/valibot";
+import { logger } from "@loggers";
+import { DropdownMenu } from "@radix-ui/react-dropdown-menu";
+import { Currencies, type DuesData, DuesSchema } from "@typings/support";
+import { ChevronsUpDown, Handshake } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
-export function PaymentForm() {
+export const PaymentForm = () => {
+	const form = useForm<DuesData>({
+		resolver: valibotResolver(DuesSchema),
+		defaultValues: {
+			firstName: "",
+			lastName: "",
+			membershipId: "",
+			emailAddress: "",
+			currency: "GHS",
+			amount: 0.1,
+		},
+	});
+
+	//TODO:: implement backend for sending such message to an actual receipient
+	const onSubmit = (values: DuesData) => {
+		toast.success("Payment Made successfully", {
+			position: "top-right",
+			closeButton: true,
+			icon: <Handshake color="green" />,
+		});
+		logger.info(values);
+	};
 	return (
-		<div className="mx-auto flex h-170 w-250 items-center gap-2 rounded border shadow">
-			<div className="flex h-full w-full items-center justify-center py-8">
-				<div className="h-full w-full min-w-sm">
-					<Tabs defaultValue="account" className="h-full px-4">
-						<TabsList>
-							<TabsTrigger value="account">
-								<FontAwesomeIcon icon={faFileInvoice} size="2x" />
-							</TabsTrigger>
-							<TabsTrigger value="visa" disabled={true}>
-								<FontAwesomeIcon icon={faCcVisa} size="5x" />
-							</TabsTrigger>
-							<TabsTrigger value="master" disabled={true}>
-								<FontAwesomeIcon icon={faCcMastercard} size="5x" />
-							</TabsTrigger>
-							<TabsTrigger value="google" disabled={true}>
-								<FontAwesomeIcon icon={faGooglePay} size="5x" />
-							</TabsTrigger>
-							<TabsTrigger value="apple" disabled={true}>
-								<FontAwesomeIcon icon={faApplePay} size="5x" />
-							</TabsTrigger>
-							<TabsTrigger value="paypal" disabled={true}>
-								<FontAwesomeIcon icon={faPaypal} size="5x" />
-							</TabsTrigger>
-						</TabsList>
-						<TabsContent value="account">
-							<Card className="h-full rounded-none border-none shadow-none">
-								<CardHeader>
-									<CardTitle>Payment Form</CardTitle>
-									<CardDescription>
-										Please fill the form below to make payment.
-									</CardDescription>
-								</CardHeader>
-								<CardContent className="grid gap-6">
-									<div className="grid gap-3">
-										<Label htmlFor="tabs-demo-name">First Name</Label>
-										<Input id={useId()} defaultValue="Pedro Duarte" />
-									</div>
-									<div className="grid gap-3">
-										<Label htmlFor="tabs-demo-username">Last Name</Label>
-										<Input id={useId()} defaultValue="@peduarte" />
-									</div>
-									<div className="grid gap-3">
-										<Label htmlFor="tabs-demo-username">Membership ID</Label>
-										<Input id={useId()} defaultValue="@peduarte" />
-									</div>
-									<div className="grid gap-3">
-										<Label htmlFor="tabs-demo-username">Email Address</Label>
-										<Input id={useId()} defaultValue="@peduarte" />
-									</div>
-									<div className="grid gap-3">
-										<Label htmlFor="tabs-demo-username">Amount</Label>
-										<Input id={useId()} defaultValue="@peduarte" />
-									</div>
-								</CardContent>
-								<CardFooter>
-									<Button>Make Payment</Button>
-								</CardFooter>
-							</Card>
-						</TabsContent>
-					</Tabs>
-				</div>
-			</div>
+		<Form {...form}>
+			<form onSubmit={form.handleSubmit(onSubmit)}>
+				<div className="space-y-4">
+					<FormField
+						control={form.control}
+						name="firstName"
+						render={({ field }) => (
+							<FormItem>
+								<FormLabel>First Name:</FormLabel>
+								<FormControl>
+									<Input {...field} type="text" />
+								</FormControl>
+								<FormMessage />
+							</FormItem>
+						)}
+					/>
+					<FormField
+						control={form.control}
+						name="lastName"
+						render={({ field }) => (
+							<FormItem>
+								<FormLabel>Last Name:</FormLabel>
+								<FormControl>
+									<Input {...field} type="text" />
+								</FormControl>
+								<FormMessage />
+							</FormItem>
+						)}
+					/>
+					<FormField
+						control={form.control}
+						name="membershipId"
+						render={({ field }) => (
+							<FormItem>
+								<FormLabel>Membership ID:</FormLabel>
+								<FormControl>
+									<Input {...field} type="text" />
+								</FormControl>
+								<FormMessage />
+							</FormItem>
+						)}
+					/>
+					<FormField
+						control={form.control}
+						name="emailAddress"
+						render={({ field }) => (
+							<FormItem>
+								<FormLabel>Email Address:</FormLabel>
+								<FormControl>
+									<Input {...field} type="email" />
+								</FormControl>
+								<FormMessage />
+							</FormItem>
+						)}
+					/>
 
-			<div className="hidden h-full w-full border md:flex">
-				<img
-					src="/images/officialgsbe_cover_about.jpeg"
-					alt="Payment Illustration"
-					className="h-full w-full object-cover"
-				/>
-			</div>
-		</div>
+					<div className="space-y-2">
+						<Label>Amount:</Label>
+						<div className="flex items-center gap-2">
+							<FormField
+								control={form.control}
+								name="currency"
+								render={({ field }) => (
+									<FormItem>
+										<DropdownMenu>
+											<DropdownMenuTrigger asChild={true}>
+												<Button variant="outline" className="">
+													{field.value}
+													<ChevronsUpDown
+														className={cn("-mr-2 size-4 opacity-50")}
+													/>
+												</Button>
+											</DropdownMenuTrigger>
+											<DropdownMenuContent>
+												<DropdownMenuLabel>Select Currency</DropdownMenuLabel>
+												<DropdownMenuSeparator />
+												<DropdownMenuRadioGroup
+													value={field.value}
+													onValueChange={field.onChange}
+												>
+													{Object.values(Currencies).map((value) => (
+														<DropdownMenuRadioItem value={value} key={value}>
+															{value}
+														</DropdownMenuRadioItem>
+													))}
+												</DropdownMenuRadioGroup>
+											</DropdownMenuContent>
+										</DropdownMenu>
+										<FormMessage />
+									</FormItem>
+								)}
+							/>
+							<FormField
+								control={form.control}
+								name="amount"
+								render={({ field }) => (
+									<FormItem className="w-full">
+										<FormControl>
+											<Input {...field} type="number" className="" />
+										</FormControl>
+										<FormMessage />
+									</FormItem>
+								)}
+							/>
+						</div>
+					</div>
+					<Button type="submit">Make Payment</Button>
+				</div>
+			</form>
+		</Form>
 	);
-}
+};

@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/nursery/noExcessiveLinesPerFunction: allowed */
 import { useUserLocation } from "@api/location";
 import {
 	Button,
