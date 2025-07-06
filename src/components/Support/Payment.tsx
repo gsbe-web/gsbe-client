@@ -23,7 +23,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export function Payment() {
 	return (
-		<div className="mx-auto flex h-180 w-full items-center gap-2 rounded border shadow lg:w-250">
+		<div className="mx-auto flex h-180 w-full items-center gap-2 rounded border shadow lg:w-9/10 xl:w-2/3">
 			<div className="flex h-full w-full items-center justify-center py-8">
 				<div className="h-full w-full lg:min-w-sm">
 					<Tabs defaultValue="account" className="h-full px-4">

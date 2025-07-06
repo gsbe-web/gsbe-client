@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const DuesTable = () => {
 	return (
-		<table className="mx-auto my-2 w-full border-collapse border border-gray-400 text-center">
+		<table className="mx-auto my-2 border-collapse border border-gray-400 text-center max-sm:w-full">
 			<thead className="bg-black text-white">
 				<tr>
 					<th className="w-1/2 border border-gray-300 px-6 py-2">
@@ -41,7 +41,7 @@ const PaymentInstructions = () => {
 	const [isEllipsisOpen, setIsEllipsisOpen] = useState(false);
 
 	return (
-		<div className="mx-auto w-full text-justify font-light text-black md:w-2/3">
+		<div className="mx-auto w-2/3 text-justify font-light text-black">
 			{isEllipsisOpen ? (
 				<>
 					<h2 className="inline-block py-6 text-pretty">
