@@ -1,5 +1,5 @@
 import { useEvents } from "@api/events";
-import { EventCard } from "@components/Events";
+import { EventCalendar, EventCard } from "@components/Events";
 import { Paginated, Spinner } from "@components/shared";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
@@ -22,15 +22,15 @@ export function Events() {
 		isFetching,
 		isError,
 	} = useEvents({ pageSize: 10, page: currentPage });
-
-	if (isLoading || isFetching) {
-		return <Spinner isLoading={true} />;
-	}
-
-	if (isError || !events) {
-		return <p className="mt-200">Failed to load data</p>;
-	}
-
+	/*
+    if (isLoading || isFetching) {
+      return <Spinner isLoading={true} />;
+    }
+  
+    if (isError || !events) {
+      return <p className="mt-200">Failed to load data</p>;
+    }
+  */
 	return (
 		<div className="bg-[#EAEAE8] md:p-12">
 			<section className="bg-white py-6 text-[#455D6B] shadow-lg md:rounded-lg md:p-6">
@@ -38,7 +38,9 @@ export function Events() {
 					UPCOMING EVENTS
 				</h1>
 				<div className="flex flex-wrap justify-center gap-8 p-4">
-					{events.rows.map((event) => (
+					{isError && !events && <p className="mt-200">Failed to load data</p>}
+					{(isLoading || isFetching) && <Spinner isLoading={true} />}
+					{events?.rows.map((event) => (
 						<div className="min-h-130 w-110" key={event.slug}>
 							<EventCard event={event} key={event.slug} />
 						</div>
@@ -48,9 +50,12 @@ export function Events() {
 					<Paginated
 						currentPage={currentPage}
 						onPageChange={setCurrentPage}
-						totalPages={events.totalPages}
+						totalPages={events?.totalPages}
 					/>
 				</div>
+			</section>
+			<section>
+				<EventCalendar />
 			</section>
 		</div>
 	);
