@@ -83,7 +83,7 @@ const Subscribe = () => {
 
 					<Button
 						variant="default"
-						className="cursor-pointer rounded-full bg-[#254152] font-medium hover:bg-[#1e3544]"
+						className="cursor-pointer rounded-full bg-[#254152] font-medium hover:bg-[#1e3544] max-lg:w-full"
 						type="button"
 					>
 						Join

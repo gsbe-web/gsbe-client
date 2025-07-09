@@ -32,11 +32,9 @@ const reviews = [
 
 const Display = ({ message, author }: ReviewItem) => {
 	return (
-		<div className="w-2/3 mx-auto px-44">
-			<p className="block pt-12 pb-4 text-[#636362] text-lg font-semibold">
-				"{message}"
-			</p>
-			<strong className="block py-4 text-[#254152] uppercase">{author}</strong>
+		<div className="w-full space-y-5 p-4">
+			<p className="text-lg font-semibold text-[#636362]">"{message}"</p>
+			<strong className="text-[#254152] uppercase">{author}</strong>
 		</div>
 	);
 };
@@ -47,11 +45,11 @@ export const Reviews = () => {
 	);
 
 	return (
-		<div className="bg-[#EEEEED] text-center">
-			<h1 className="text-[#254152] tracking-widest text-4xl py-4">
+		<section className="bg-[#EEEEED] py-5 text-center">
+			<h1 className="text-4xl tracking-widest text-[#254152]">
 				REVIEWS FROM AFFILIATED INSTITUTIONS OR INDIVIDUALS
 			</h1>
-			<div className="relative flex w-full justify-center">
+			<div className="relative mx-auto flex w-full justify-center lg:w-1/4">
 				<Carousel
 					plugins={[plugin.current]}
 					opts={{ loop: true }}
@@ -64,10 +62,16 @@ export const Reviews = () => {
 							</CarouselItem>
 						))}
 					</CarouselContent>
-					<CarouselPrevious className="absolute top-1/2 left-4 z-10 -translate-y-1/2" />
-					<CarouselNext className="absolute top-1/2 right-4 z-10 -translate-y-1/2" />
+					<CarouselPrevious
+						className="absolute top-1/2 left-0 z-10 -translate-y-1/2"
+						size="lg"
+					/>
+					<CarouselNext
+						className="absolute top-1/2 right-0 z-10 -translate-y-1/2"
+						size="lg"
+					/>
 				</Carousel>
 			</div>
-		</div>
+		</section>
 	);
 };

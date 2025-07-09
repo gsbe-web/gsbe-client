@@ -1,14 +1,18 @@
 export const PresidentsMessage = () => {
 	return (
-		<div className="bg-[#EEEEED] py-12 text-4xl">
+		<section className="space-y-8 text-4xl">
 			<h1 className="text-center tracking-widest text-[#254152] uppercase">
 				message from the president
 			</h1>
-			<div className="grid grid-cols-2 pt-20 text-[#254152]">
-				<div className="text-lg">
-					<img src="/images/gsbe_conference.webp" alt="president" />
+			<div className="mx-auto grid w-full gap-8 rounded-lg border p-5 text-[#254152] shadow md:h-200 md:w-2/3 md:grid-cols-2">
+				<div className="max-sm:h-100">
+					<img
+						src="/images/gsbe_conference.webp"
+						alt="president"
+						className="h-full w-full object-cover"
+					/>
 				</div>
-				<div className="w-2/3 bg-white px-10 py-20">
+				<div className="mt-auto">
 					<p className="text-lg">
 						It is with great pride and a deep sense of responsibility that I
 						welcome you to the official website of the Ghana Society of
@@ -28,6 +32,6 @@ export const PresidentsMessage = () => {
 					</strong>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };

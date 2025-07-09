@@ -2,16 +2,14 @@
 "use client";
 
 import {
-	Button,
 	Carousel,
 	CarouselContent,
 	CarouselItem,
 	CarouselNext,
 	CarouselPrevious,
 } from "@components/ui";
-import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Autoplay from "embla-carousel-autoplay";
+import { ArrowRight } from "lucide-react";
 import * as React from "react";
 import { Link } from "react-router";
 
@@ -63,20 +61,23 @@ const Holder = ({ consumable }: { consumable: CarouselConsumable }) => {
 					backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${consumable.imageUrl})`,
 					backgroundBlendMode: "darken",
 				}}
-				className={`relative text-center text-5xl leading-20 text-[${consumable.textColor}] flex h-full w-full flex-col items-center overflow-hidden bg-cover bg-center`}
+				className={`relative text-center text-4xl md:text-5xl text-[${consumable.textColor}] flex h-full w-full flex-col items-center overflow-hidden bg-cover bg-center`}
 			>
 				<div
-					className={`absolute top-1/4 ${consumable.textTransform} tracking-wide ${consumable.fontWeight}`}
+					className={`absolute top-1/4 ${consumable.textTransform} flex flex-col justify-center tracking-wide ${consumable.fontWeight} space-y-4`}
 				>
-					{consumable.text}
-					{consumable.buttonContent && (
-						<Link to="/about/membership" className="block pt-20">
-							<Button className="w-56 rounded-xl border border-[#192E3C] bg-white px-12 py-8 font-sans text-lg font-medium text-[#254152] hover:border-white hover:bg-[#254152] hover:text-white">
+					<p className="p-4">{consumable.text}</p>
+					<div className="mx-auto">
+						{consumable.buttonContent && (
+							<Link
+								to="/about/membership"
+								className="bg flex w-fit items-center gap-2 rounded-lg bg-white p-3 text-sm text-black hover:bg-[#254152] hover:text-white md:text-lg"
+							>
 								{consumable.buttonContent}
-								<FontAwesomeIcon icon={faArrowRightLong} size="2xl" />
-							</Button>
-						</Link>
-					)}
+								<ArrowRight size={20} />
+							</Link>
+						)}
+					</div>
 				</div>
 			</div>
 		</div>
@@ -85,7 +86,7 @@ const Holder = ({ consumable }: { consumable: CarouselConsumable }) => {
 
 export function WelcomeCarousel() {
 	const plugin = React.useRef(
-		Autoplay({ delay: 3000, stopOnMouseEnter: true, stopOnInteraction: true }),
+		Autoplay({ delay: 4000, stopOnMouseEnter: true, stopOnInteraction: true }),
 	);
 
 	return (
@@ -97,7 +98,7 @@ export function WelcomeCarousel() {
 			>
 				<CarouselContent>
 					{consumables.map((_) => (
-						<CarouselItem key={_.id} className="">
+						<CarouselItem key={_.id} className="w-full">
 							<Holder consumable={_} />
 						</CarouselItem>
 					))}

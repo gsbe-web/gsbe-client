@@ -6,9 +6,9 @@ export const MainEvent = () => {
 			<div>
 				<img alt="Conference flyer" src="/images/gsbe_conference.webp" />
 			</div>
-			<div>
-				<div className="flex flex-col justify-between gap-10 py-8 text-justify text-sm leading-relaxed font-light text-[#2F2F2E] md:flex-row px-96">
-					<span className="w-2/3">
+			<div className="w-full">
+				<div className="flex w-full flex-col justify-between gap-10 p-5 text-justify text-sm leading-relaxed font-light text-[#2F2F2E] md:flex-row">
+					<p className="w-full">
 						The Ghana Society of Biomedical engineers is organizing our 4th
 						National biomedical engineering conference
 						<br /> Ghana Society of Biomedical Engineers (GSBE) is a
@@ -19,8 +19,8 @@ export const MainEvent = () => {
 						Ghana. With this in mind, we combine design and problem-solving
 						skills of Engineering with medicine, biological science and
 						technology to improve healthcare diagnosis and treatment.
-					</span>
-					<span className="w-2/3">
+					</p>
+					<p className="w-full">
 						As part of our constitutional mandate, it is said to have its annual
 						conference every ensuing year to keep account of it&apos;s year
 						under review. This year&apos;s conference marks the 4th annual
@@ -36,7 +36,7 @@ export const MainEvent = () => {
 						</span>
 						<br />
 						Come and let&apos;s make this general conference a joyous one..
-					</span>
+					</p>
 				</div>
 			</div>
 			<Link to="/events/2nd-african-regional-biomedical-engineering-conference-ghana">
