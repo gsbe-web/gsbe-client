@@ -32,9 +32,9 @@ export function Events() {
     }
   */
 	return (
-		<div className="bg-[#EAEAE8] md:p-12">
-			<section className="bg-white py-6 text-[#455D6B] shadow-lg md:rounded-lg md:p-6">
-				<h1 className="text-center text-2xl font-extrabold tracking-widest text-[#D55342] md:text-4xl">
+		<div className=" md:p-12">
+			<section className="bg-white py-6 text-[#455D6B]  md:rounded-lg md:p-6">
+				<h1 className="text-center text-2xl font-extrabold tracking-widest text-[#254152] md:text-4xl">
 					UPCOMING EVENTS
 				</h1>
 				<div className="flex flex-wrap justify-center gap-8 p-4">
