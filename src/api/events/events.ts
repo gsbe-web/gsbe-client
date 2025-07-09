@@ -7,6 +7,7 @@ export interface EventData {
 	id: string;
 	slug: string;
 	imageId: string;
+	imageUrl: string;
 	title: string;
 	date: Date;
 	location: string;

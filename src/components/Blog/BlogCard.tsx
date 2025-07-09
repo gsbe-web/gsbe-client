@@ -1,5 +1,4 @@
 import { ShareDropDown } from "@components/Blog";
-import { HtmlRenderer } from "@components/shared";
 import {
 	faEye,
 	faMessage,
@@ -12,9 +11,10 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { BlogDetailProps } from "@typings/blog";
 import { formatTimestamp } from "@utils";
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import TextTruncate from "react-text-truncate";
+import { stripHtml } from "string-strip-html";
 
 export const BlogCard: React.FC<BlogDetailProps> = (props) => {
 	const { blogPost } = props;
@@ -33,6 +33,7 @@ export const BlogCard: React.FC<BlogDetailProps> = (props) => {
 			liked ? prevCount - 1 : prevCount + 1,
 		);
 	};
+
 	const { date, time } = formatTimestamp(blogPost.dateTimePosted);
 	return (
 		<div className="h-full border border-gray-200 px-3 py-14">
@@ -40,7 +41,7 @@ export const BlogCard: React.FC<BlogDetailProps> = (props) => {
 				<img
 					alt={blogPost.title}
 					className="h-full w-full cursor-pointer"
-					src={`https://lh3.googleusercontent.com/d/${blogPost.postImageId}`}
+					src={blogPost.postImageUrl}
 				/>
 				<div className="px-6 pt-4">
 					<div className="flex items-center justify-between">
@@ -69,8 +70,17 @@ export const BlogCard: React.FC<BlogDetailProps> = (props) => {
 							{blogPost.title}
 						</div>
 					</Link>
-					<div className="line-clamp-1 h-10 w-90 pb-5 text-left text-sm text-ellipsis text-gray-700">
-						<HtmlRenderer>{blogPost.content}</HtmlRenderer>
+					<div className="text-left text-base text-gray-700">
+						<TextTruncate
+							line={1}
+							element="span"
+							truncateText="…"
+							text={stripHtml(blogPost.content).result}
+							textTruncateChild={
+								<Link to={`/publications/${blogPost.slug}`}>Read More</Link>
+							}
+						/>
+						{/* <HtmlRenderer>{blogPost.content}</HtmlRenderer> */}
 					</div>
 				</div>
 				<div className="flex items-center px-6 pt-4 pb-2 text-black">

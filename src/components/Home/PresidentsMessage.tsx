@@ -1,14 +1,14 @@
 export const PresidentsMessage = () => {
 	return (
-		<div className=" bg-[#EEEEED]  text-4xl py-12">
-			<h1 className="uppercase tracking-widest text-[#254152] text-center">
+		<div className="bg-[#EEEEED] py-12 text-4xl">
+			<h1 className="text-center tracking-widest text-[#254152] uppercase">
 				message from the president
 			</h1>
-			<div className="grid grid-cols-2 text-[#254152] pt-20">
+			<div className="grid grid-cols-2 pt-20 text-[#254152]">
 				<div className="text-lg">
-					<img src="" alt="president" />
+					<img src="/images/gsbe_conference.webp" alt="president" />
 				</div>
-				<div className="bg-white px-10 py-20 w-2/3">
+				<div className="w-2/3 bg-white px-10 py-20">
 					<p className="text-lg">
 						It is with great pride and a deep sense of responsibility that I
 						welcome you to the official website of the Ghana Society of

@@ -39,11 +39,7 @@ export const EventDetails = () => {
 				</Link>
 			</div>
 
-			<img
-				alt={event.title}
-				className="mb-8 w-full"
-				src={`https://lh3.googleusercontent.com/d/${event.imageId}`}
-			/>
+			<img alt={event.title} className="mb-8 w-full" src={event.imageUrl} />
 
 			<div className="markdown text-justify text-lg">
 				<HtmlRenderer>{event.description || ""}</HtmlRenderer>

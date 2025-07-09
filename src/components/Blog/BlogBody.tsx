@@ -43,11 +43,11 @@ export const BlogBody: React.FC<BlogBodyProps> = (props) => {
 				<img
 					alt={blogPost.title}
 					className="mx-auto w-full cursor-pointer lg:h-[40rem]"
-					src={`https://lh3.googleusercontent.com/d/${blogPost.postImageId}`}
+					src={blogPost.postImageUrl}
 				/>
 			</div>
-			<div>
-				<div className="py-5 text-justify text-xl leading-loose text-gray-700">
+			<div className="w-full">
+				<div className="w-full p-5 text-xl leading-loose text-gray-700">
 					<HtmlRenderer>{blogPost.content}</HtmlRenderer>
 				</div>
 			</div>

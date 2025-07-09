@@ -12,6 +12,7 @@ export interface News {
 	username: string;
 	profileImageUrl: string;
 	postImageId: string;
+	postImageUrl: string;
 	views: number;
 	comments: number;
 	likes: number;

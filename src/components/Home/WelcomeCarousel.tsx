@@ -57,24 +57,27 @@ const consumables: CarouselConsumable[] = [
 
 const Holder = ({ consumable }: { consumable: CarouselConsumable }) => {
 	return (
-		<div className="flex h-[70dvh] items-center justify-center  w-full">
+		<div className="flex h-[70dvh] w-full items-center justify-center">
 			<div
-				style={{ backgroundImage: `url(${consumable.imageUrl})` }}
-				className={`text-5xl leading-20 text-center text-[${consumable.textColor}] ${consumable.fontStyle} w-full h-full bg-cover bg-center overflow-hidden flex flex-col  items-center`}
+				style={{
+					backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${consumable.imageUrl})`,
+					backgroundBlendMode: "darken",
+				}}
+				className={`relative text-center text-5xl leading-20 text-[${consumable.textColor}] flex h-full w-full flex-col items-center overflow-hidden bg-cover bg-center`}
 			>
 				<div
-					className={`w-2/3 pt-20 ${consumable.textTransform} tracking-wide ${consumable.fontWeight}`}
+					className={`absolute top-1/4 ${consumable.textTransform} tracking-wide ${consumable.fontWeight}`}
 				>
 					{consumable.text}
+					{consumable.buttonContent && (
+						<Link to="/about/membership" className="block pt-20">
+							<Button className="w-56 rounded-xl border border-[#192E3C] bg-white px-12 py-8 font-sans text-lg font-medium text-[#254152] hover:border-white hover:bg-[#254152] hover:text-white">
+								{consumable.buttonContent}
+								<FontAwesomeIcon icon={faArrowRightLong} size="2xl" />
+							</Button>
+						</Link>
+					)}
 				</div>
-				{consumable.buttonContent && (
-					<Link to="/about/membership" className="block pt-20">
-						<Button className="bg-white text-[#254152] hover:bg-[#254152] hover:text-white border border-[#192E3C] hover:border-white rounded-xl py-8 px-12  font-sans font-medium w-56 text-lg">
-							{consumable.buttonContent}
-							<FontAwesomeIcon icon={faArrowRightLong} size="2xl" />
-						</Button>
-					</Link>
-				)}
 			</div>
 		</div>
 	);
@@ -82,7 +85,7 @@ const Holder = ({ consumable }: { consumable: CarouselConsumable }) => {
 
 export function WelcomeCarousel() {
 	const plugin = React.useRef(
-		Autoplay({ delay: 3000, stopOnMouseEnter: true, stopOnInteraction: false }),
+		Autoplay({ delay: 3000, stopOnMouseEnter: true, stopOnInteraction: true }),
 	);
 
 	return (

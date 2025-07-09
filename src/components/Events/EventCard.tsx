@@ -12,8 +12,7 @@ export const EventCard: React.FC<EventCardProps> = (props) => {
 				<img
 					alt={event.title}
 					className="h-full w-full object-cover"
-					// src={`https://lh3.googleusercontent.com/d/${event.imageId}=s4096?authuser=0`}
-					src={`https://lh3.googleusercontent.com/d/${event.imageId}`}
+					src={event.imageUrl}
 				/>
 			</div>
 			<div className="flex-grow p-4 text-center">

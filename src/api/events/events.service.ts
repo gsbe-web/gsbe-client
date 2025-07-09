@@ -13,5 +13,5 @@ export const useEvent = (slug: string) =>
 	useQuery({
 		queryKey: ["events", slug],
 		queryFn: () => getEventBySlug(slug),
-		enabled: !!slug,
+		enabled: Boolean(slug),
 	});
