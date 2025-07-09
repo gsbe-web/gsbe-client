@@ -24,6 +24,4 @@
 	"editor.insertSpaces": false,
 	"typescript.tsdk": "node_modules/typescript/lib",
 	"typescript.preferences.importModuleSpecifier": "non-relative",
-	"biome.lsp.bin": "/usr/local/Cellar/biome/2.1.1/bin",
-	"biome.enabled": true
 }
