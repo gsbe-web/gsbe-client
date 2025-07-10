@@ -41,7 +41,7 @@ const Display = ({ message, author }: ReviewItem) => {
 
 export const Reviews = () => {
 	const plugin = React.useRef(
-		Autoplay({ delay: 3000, stopOnMouseEnter: true, stopOnInteraction: false }),
+		Autoplay({ delay: 3000, stopOnMouseEnter: true, stopOnInteraction: true }),
 	);
 	return (
 		<section className="bg-[#EEEEED] py-5 text-center">
