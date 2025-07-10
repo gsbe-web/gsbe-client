@@ -8,7 +8,7 @@ export const PresidentsMessage = () => {
 				<div className="mx-auto w-full text-[#254152] md:h-160 lg:h-200 lg:p-5 xl:w-3/4">
 					<div className="relative flex h-full w-full max-md:flex-col md:w-3/6 lg:rounded-t-full">
 						<img
-							src="/images/gsbe_conference.webp"
+							src="/images/fake_president.png"
 							alt="president"
 							className="h-full w-full object-cover lg:rounded-t-full"
 						/>
