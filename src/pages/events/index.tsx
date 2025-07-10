@@ -55,7 +55,7 @@ export function Events() {
 				</div>
 			</section>
 			<section>
-				<EventCalendar />
+				<EventCalendar events={events?.rows} />
 			</section>
 		</div>
 	);
