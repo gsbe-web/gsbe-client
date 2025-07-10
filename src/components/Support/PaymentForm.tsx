@@ -154,7 +154,9 @@ export const PaymentForm = () => {
 							/>
 						</div>
 					</div>
-					<Button type="submit">Make Payment</Button>
+					<Button type="submit" className="bg-[#254152] hover:bg-[#1e3544]">
+						Make Payment
+					</Button>
 				</div>
 			</form>
 		</Form>

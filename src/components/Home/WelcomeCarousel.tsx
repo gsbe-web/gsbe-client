@@ -86,7 +86,7 @@ const Holder = ({ consumable }: { consumable: CarouselConsumable }) => {
 
 export function WelcomeCarousel() {
 	const plugin = React.useRef(
-		Autoplay({ delay: 4000, stopOnMouseEnter: true, stopOnInteraction: false }),
+		Autoplay({ delay: 4000, stopOnMouseEnter: true, stopOnInteraction: true }),
 	);
 
 	return (

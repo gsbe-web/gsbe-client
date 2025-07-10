@@ -48,7 +48,7 @@ export function Payment() {
 							</TabsTrigger>
 						</TabsList>
 						<TabsContent value="account">
-							<Card className="h-full w-full rounded-none border-none shadow-none">
+							<Card className="h-full w-full rounded-none border-none text-[#254152] shadow-none">
 								<CardHeader>
 									<CardTitle>Payment Form</CardTitle>
 									<CardDescription>

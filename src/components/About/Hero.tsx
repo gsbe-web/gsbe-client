@@ -12,15 +12,15 @@ export const AboutHero = () => {
 			</div>
 
 			<div>
-				<span className="absolute top-1/7 left-1/8 text-[#FFFFFF] lg:top-2/7 lg:left-1/5">
+				<div className="absolute top-1/7 left-1/8 text-[#FFFFFF] lg:top-2/7 lg:left-1/5">
 					<p className="font-anton text-8xl">We Are GSBE !</p>
 					<p className="pt-3 font-light">
 						Representing a community from academia, healthcare and industry
 					</p>
-				</span>
-				<span className="font-jost absolute top-3/7 left-1/5 rounded-xl p-5 py-3 font-medium tracking-wider text-[#FFFFFF] hover:bg-neutral-400 hover:underline">
+				</div>
+				<div className="font-jost absolute top-3/7 left-1/5 rounded-xl p-5 py-3 font-medium tracking-wider text-[#FFFFFF] hover:underline">
 					<Link to="/about/membership">Become a Member</Link>
-				</span>
+				</div>
 			</div>
 		</div>
 	);

@@ -28,7 +28,7 @@ export const ShareLinkPopUp: React.FC<ShareLinkProps> = (props) => {
 
 	return (
 		<Dialog open={openDialog} onOpenChange={onOpenDialog}>
-			<DialogContent>
+			<DialogContent className="text-[#254152]">
 				<DialogHeader>
 					<DialogTitle className="flex gap-2">
 						<Link />
@@ -37,7 +37,7 @@ export const ShareLinkPopUp: React.FC<ShareLinkProps> = (props) => {
 				</DialogHeader>
 				<div className="flex flex-col">
 					<Input
-						className="mb-3 w-full border p-2"
+						className="mb-3 w-full border p-2 selection:bg-[#254152]"
 						readOnly={true}
 						type="text"
 						value={window.location.href}
@@ -45,9 +45,16 @@ export const ShareLinkPopUp: React.FC<ShareLinkProps> = (props) => {
 				</div>
 				<DialogFooter>
 					<DialogClose asChild={true}>
-						<Button variant="outline">Cancel</Button>
+						<Button variant="outline" className="text-[#254152]">
+							Cancel
+						</Button>
 					</DialogClose>
-					<Button variant="default" type="submit" onClick={handleCopyLink}>
+					<Button
+						variant="default"
+						type="submit"
+						className="bg-[#254152] hover:bg-[#1e3544]"
+						onClick={handleCopyLink}
+					>
 						Copy Link
 					</Button>
 				</DialogFooter>

@@ -26,8 +26,8 @@ const missions: MissionCard[] = [
 
 const MissionCard = ({ title, content }: MissionCard) => {
 	return (
-		<div className="bg-white text-[#254152] text-center pt-24 pb-18 px-10 lg:w-11/12 ">
-			<div className="uppercase font-extrabold tracking-[3px]">{title}</div>
+		<div className="bg-white px-10 pt-24 pb-18 text-center text-[#254152] lg:w-11/12">
+			<div className="font-extrabold tracking-[3px] uppercase">{title}</div>
 			<div className="text-base/8 font-light">
 				<p>{content}</p>
 			</div>
@@ -37,12 +37,12 @@ const MissionCard = ({ title, content }: MissionCard) => {
 
 export const Mission = () => {
 	return (
-		<div className="bg-white  min-h-[80vh]">
-			<div className="uppercase text-center font-anton text-[#254152] text-5xl font-extralight py-20 ">
+		<div className="min-h-[80vh] bg-white">
+			<div className="font-anton py-20 text-center text-5xl font-extralight text-[#254152] uppercase">
 				What we do
 			</div>
-			<div className="w-full min-h-[70dvh] h-[70dvh]  bg-[url(/images/officialgsbe_cover_about.jpeg)] bg-cover bg-center lg:overflow-hidden ">
-				<div className="grid grid-rows-3 lg:grid-cols-3  lg:mx-52 pt-24 gap-4">
+			<div className="h-[70dvh] min-h-[70dvh] w-full bg-[url(/images/gsbe_personnel.jpg)] bg-cover bg-center lg:overflow-hidden">
+				<div className="grid grid-rows-3 gap-4 pt-24 lg:mx-52 lg:grid-cols-3">
 					{missions.map((m) => (
 						<MissionCard title={m.title} content={m.content} key={m.title} />
 					))}
