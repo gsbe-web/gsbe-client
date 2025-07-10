@@ -43,13 +43,12 @@ export const Reviews = () => {
 	const plugin = React.useRef(
 		Autoplay({ delay: 3000, stopOnMouseEnter: true, stopOnInteraction: false }),
 	);
-
 	return (
 		<section className="bg-[#EEEEED] py-5 text-center">
 			<h1 className="text-4xl tracking-widest text-[#254152]">
 				REVIEWS FROM AFFILIATED INSTITUTIONS OR INDIVIDUALS
 			</h1>
-			<div className="relative mx-auto flex w-full justify-center lg:w-1/4">
+			<div className="relative mx-auto flex w-full justify-center lg:w-1/2 xl:w-1/3">
 				<Carousel
 					plugins={[plugin.current]}
 					opts={{ loop: true }}

@@ -15,8 +15,10 @@ export function Home() {
 			<MissionStatement />
 			<OurEvents />
 			<LatestNews />
-			<PresidentsMessage />
-			<Reviews />
+			<div>
+				<PresidentsMessage />
+				<Reviews />
+			</div>
 			<Partners />
 		</div>
 	);
