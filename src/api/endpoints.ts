@@ -10,6 +10,7 @@ export const ENDPOINT_MAPPERS = {
 		V1: {
 			getBySlug: (slug: string) => `/events/slug/${slug}`,
 			list: "/events",
+			getCalendarEvents: "/events/calendar",
 		},
 	},
 	NEWS: {

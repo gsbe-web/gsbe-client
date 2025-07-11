@@ -1,4 +1,4 @@
-export * from "./EventCalendar";
+export * from "./Calendar";
 export * from "./EventCard";
 export * from "./EventList";
 export * from "./EventShare";

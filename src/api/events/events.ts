@@ -18,3 +18,7 @@ export interface EventData {
 export type PaginatedEventResponse = PaginationResponse<EventData>;
 
 export type EventResponse = ApiSuccessResponse<EventData>;
+
+export type CalendarEvent = Pick<EventData, "id" | "date" | "title" | "slug">;
+
+export type CalendarEventsResponse = ApiSuccessResponse<CalendarEvent[]>;

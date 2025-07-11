@@ -22,40 +22,53 @@ export function Events() {
 		isFetching,
 		isError,
 	} = useEvents({ pageSize: 10, page: currentPage });
-	/*
-    if (isLoading || isFetching) {
-      return <Spinner isLoading={true} />;
-    }
-  
-    if (isError || !events) {
-      return <p className="mt-200">Failed to load data</p>;
-    }
-  */
+
+	const loadingStatus = (() => {
+		if (isLoading || isFetching) {
+			return <Spinner isLoading={true} />;
+		}
+		if (isError) {
+			return (
+				<p className="mt-20 text-center text-red-500">Failed to load data</p>
+			);
+		}
+		if (events && events.rows.length === 0) {
+			return (
+				<p className="mt-20 text-center text-gray-500">No events found.</p>
+			);
+		}
+		return null;
+	})();
+
 	return (
-		<div className=" md:p-12">
-			<section className="bg-white py-6 text-[#455D6B]  md:rounded-lg md:p-6">
-				<h1 className="text-center text-2xl font-extrabold tracking-widest text-[#254152] md:text-4xl">
+		<div className="md:p-12">
+			<section className="bg-white py-6 text-[#455D6B] md:rounded-lg md:p-6">
+				<h1 className="text-center text-2xl font-extrabold tracking-widest text-[#D55342] md:text-4xl">
 					UPCOMING EVENTS
 				</h1>
+
 				<div className="flex flex-wrap justify-center gap-8 p-4">
-					{isError && !events && <p className="mt-200">Failed to load data</p>}
-					{(isLoading || isFetching) && <Spinner isLoading={true} />}
-					{events?.rows.map((event) => (
-						<div className="min-h-130 w-110" key={event.slug}>
-							<EventCard event={event} key={event.slug} />
-						</div>
-					))}
+					{loadingStatus ||
+						events?.rows.map((event) => (
+							<div className="min-h-130 w-110" key={event.slug}>
+								<EventCard event={event} />
+							</div>
+						))}
 				</div>
-				<div>
-					<Paginated
-						currentPage={currentPage}
-						onPageChange={setCurrentPage}
-						totalPages={events?.totalPages}
-					/>
-				</div>
+
+				{events && events.totalPages > 1 && (
+					<div>
+						<Paginated
+							currentPage={currentPage}
+							onPageChange={setCurrentPage}
+							totalPages={events.totalPages}
+						/>
+					</div>
+				)}
 			</section>
+
 			<section>
-				<EventCalendar events={events?.rows} />
+				<EventCalendar />
 			</section>
 		</div>
 	);
