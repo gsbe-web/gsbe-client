@@ -1,5 +1,5 @@
-import { SharePostModal } from "@components/Blog/Share/SharePostModal";
-import type { ShareDialogProps } from "@components/Blog/Share/types";
+import { SharePostModal } from "@components/Publications/Share/SharePostModal";
+import type { ShareDialogProps } from "@components/Publications/Share/types";
 import {
 	Dialog,
 	DialogContent,

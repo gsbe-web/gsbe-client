@@ -1,4 +1,4 @@
-import { ShareLinkPopUp } from "@components/Blog";
+import { ShareLinkPopUp } from "@components/Publications";
 import { HtmlRenderer } from "@components/shared";
 import {
 	faFacebookF,

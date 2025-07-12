@@ -1,9 +1,9 @@
 import { usePublication } from "@api/publications";
-import { BlogDetail, RecentPosts } from "@components/Blog";
+import { BlogDetail, RecentPosts } from "@components/Publications";
 import { DynamicSearchBar, Spinner } from "@components/shared";
 import { Link, useParams } from "react-router";
 
-export function OpenedBlog() {
+export function OpenedPublication() {
 	const { slug } = useParams();
 	const { data: post, isLoading } = usePublication(slug || "");
 	if (isLoading) {

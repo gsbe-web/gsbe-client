@@ -1,5 +1,5 @@
-import { ShareDialog } from "@components/Blog/Share/ShareDialog";
-import type { ShareDialogProps } from "@components/Blog/Share/types";
+import { ShareDialog } from "@components/Publications/Share/ShareDialog";
+import type { ShareDialogProps } from "@components/Publications/Share/types";
 import {
 	DropdownMenu,
 	DropdownMenuContent,

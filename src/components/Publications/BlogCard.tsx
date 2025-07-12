@@ -1,4 +1,4 @@
-import { ShareDropDown } from "@components/Blog";
+import { ShareDropDown } from "@components/Publications";
 import {
 	faEye,
 	faMessage,
