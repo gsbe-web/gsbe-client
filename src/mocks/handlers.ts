@@ -41,8 +41,13 @@ export const handlers = [
 		logger.info("Fetched events: ", request.method, request.url, request.body);
 		return;
 	}),
-	http.get(ENDPOINT_MAPPERS.NEWS.FEATURES_REGEX, ({ request }) => {
-		logger.info("Fetched events: ", request.method, request.url, request.body);
+	http.get(ENDPOINT_MAPPERS.PUBLICATIONS.FEATURES_REGEX, ({ request }) => {
+		logger.info(
+			"Fetched publications: ",
+			request.method,
+			request.url,
+			request.body,
+		);
 		return;
 	}),
 ];

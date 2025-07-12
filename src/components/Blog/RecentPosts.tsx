@@ -1,11 +1,11 @@
-import { useNewsList } from "@api/news";
+import { usePublications } from "@api/publications";
 import { BlogCard } from "@components/Blog";
 import { Spinner } from "@components/shared";
 import { Link } from "react-router";
 
 export const RecentPosts: React.FC<{ currentPostSlug: string }> = (props) => {
 	const { currentPostSlug } = props;
-	const { data: posts, isLoading, isError } = useNewsList({ pageSize: 4 });
+	const { data: posts, isLoading, isError } = usePublications({ pageSize: 4 });
 	if (isLoading) {
 		return <Spinner isLoading={true} />;
 	}
@@ -22,7 +22,7 @@ export const RecentPosts: React.FC<{ currentPostSlug: string }> = (props) => {
 				</h1>
 				<div className="relative">
 					<h1 className="mt-20 text-lg font-normal text-[#455D6B] capitalize">
-						<Link to="/blog">See All</Link>
+						<Link to="/publications">See All</Link>
 					</h1>
 				</div>
 			</div>
@@ -32,7 +32,7 @@ export const RecentPosts: React.FC<{ currentPostSlug: string }> = (props) => {
 					.filter((post: { slug: string }) => post.slug !== currentPostSlug)
 					.map((post) => (
 						<div className="mx-auto w-full md:w-120" key={post.id}>
-							<BlogCard blogPost={post} key={post.id} />
+							<BlogCard publication={post} key={post.id} />
 						</div>
 					))}
 			</div>

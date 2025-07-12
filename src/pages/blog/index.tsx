@@ -1,4 +1,4 @@
-import { useNewsList } from "@api/news";
+import { usePublications } from "@api/publications";
 import { BlogCard } from "@components/Blog";
 import { DynamicSearchBar, Paginated, Spinner } from "@components/shared";
 import { useEffect, useState } from "react";
@@ -21,7 +21,7 @@ export function Blog() {
 		isLoading,
 		isError,
 		isFetching,
-	} = useNewsList({ pageSize: 10, page: currentPage });
+	} = usePublications({ pageSize: 10, page: currentPage });
 
 	if (!posts) {
 		return <p>Posts not found</p>;
@@ -49,7 +49,7 @@ export function Blog() {
 					<div>
 						<div className="flex items-baseline justify-between px-10 text-left align-middle leading-8">
 							<h1 className="mt-20 text-lg font-normal text-[#455D6B] capitalize">
-								<Link to="/blog">All Posts</Link>
+								<Link to="/publications">All Posts</Link>
 							</h1>
 							<DynamicSearchBar />
 						</div>
@@ -58,7 +58,7 @@ export function Blog() {
 						{loadingStatus ||
 							posts.rows.map((post) => (
 								<div className="w-full md:w-120" key={post.id}>
-									<BlogCard blogPost={post} key={post.id} />
+									<BlogCard publication={post} key={post.id} />
 								</div>
 							))}
 					</div>

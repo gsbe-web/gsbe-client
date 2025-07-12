@@ -1,9 +1,9 @@
-import { useNewsList } from "@api/news";
+import { usePublications } from "@api/publications";
 import { BlogCard } from "@components/Blog";
 import { Spinner } from "@components/shared";
 
 export const LatestNews = () => {
-	const { data: posts, isLoading, isError } = useNewsList({ pageSize: 4 });
+	const { data: posts, isLoading, isError } = usePublications({ pageSize: 4 });
 
 	if (!posts) {
 		return <p>No posts found</p>;
@@ -36,7 +36,7 @@ export const LatestNews = () => {
 									className="w-full shrink-0 lg:mx-auto lg:w-110"
 									key={post.id}
 								>
-									<BlogCard blogPost={post} key={post.id} />
+									<BlogCard publication={post} key={post.id} />
 								</div>
 							))}
 					</div>

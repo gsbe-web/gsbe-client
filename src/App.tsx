@@ -48,7 +48,7 @@ export function App() {
 							</Route>
 
 							<Route element={<Contact />} path="contact" />
-							<Route element={<Support />} path="/support" />
+							<Route element={<Support />} path="dues" />
 							<Route element={<ErrorPage />} path="*" />
 						</Routes>
 					</Layout>

@@ -1,11 +1,11 @@
-import { useNews } from "@api/news";
+import { usePublication } from "@api/publications";
 import { BlogDetail, RecentPosts } from "@components/Blog";
 import { DynamicSearchBar, Spinner } from "@components/shared";
 import { Link, useParams } from "react-router";
 
 export function OpenedBlog() {
 	const { slug } = useParams();
-	const { data: post, isLoading } = useNews(slug || "");
+	const { data: post, isLoading } = usePublication(slug || "");
 	if (isLoading) {
 		return <Spinner isLoading={true} />;
 	}
@@ -26,7 +26,7 @@ export function OpenedBlog() {
 								<DynamicSearchBar />
 							</div>
 						</div>
-						<BlogDetail blogPost={post} />
+						<BlogDetail publication={post} />
 						<div className="mx-auto h-1 rounded bg-[#455D6B] md:w-4/5" />
 						<RecentPosts currentPostSlug={post.slug} />
 					</div>

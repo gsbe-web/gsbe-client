@@ -41,7 +41,7 @@ export const SharePostModal: React.FC<SharePostModalProps> = (props) => {
 		<div className="flex flex-col items-center">
 			<div className="flex gap-10">
 				<a
-					href={`https://web.facebook.com/sharer/sharer.php?u=https://www.gsbegh.com/blog/${slug}&_rdc=1&_rdr`}
+					href={`https://web.facebook.com/sharer/sharer.php?u=https://www.gsbegh.com/publications/${slug}&_rdc=1&_rdr`}
 				>
 					<FontAwesomeIcon
 						className="text-[#4464a3]"
@@ -51,7 +51,7 @@ export const SharePostModal: React.FC<SharePostModalProps> = (props) => {
 				</a>
 
 				<a
-					href={`https://x.com/intent/post?url=https://www.gsbegh.com/blog/${slug}`}
+					href={`https://x.com/intent/post?url=https://www.gsbegh.com/publications/${slug}`}
 				>
 					<FontAwesomeIcon
 						className="text-[#56acee]"
@@ -61,7 +61,7 @@ export const SharePostModal: React.FC<SharePostModalProps> = (props) => {
 				</a>
 
 				<a
-					href={`https://www.linkedin.com/shareArticle/?mini=true&url=https://www.gsbegh.com/blog/${slug}`}
+					href={`https://www.linkedin.com/shareArticle/?mini=true&url=https://www.gsbegh.com/publications/${slug}`}
 				>
 					<FontAwesomeIcon
 						className="text-[#0077b5]"

@@ -14,7 +14,7 @@ export const ENDPOINT_MAPPERS = {
 		},
 	},
 	PUBLICATIONS: {
-		FEATURES_REGEX: /.*(news).*/,
+		FEATURES_REGEX: /.*(publications).*/,
 		V1: {
 			getBySlug: (slug: string) => `/publications/slug/${slug}`,
 			list: "/publications",

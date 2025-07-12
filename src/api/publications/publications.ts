@@ -3,7 +3,7 @@ import type {
 	PaginationResponse,
 } from "@api/shared/types/responses";
 
-export interface News {
+export interface Publication {
 	id: string;
 	slug: string;
 	dateTimePosted: Date;
@@ -18,6 +18,6 @@ export interface News {
 	likes: number;
 }
 
-export type PaginatedNewsResponse = PaginationResponse<News>;
+export type PaginatedPublicationResponse = PaginationResponse<Publication>;
 
-export type NewsResponse = ApiSuccessResponse<News>;
+export type PublicationResponse = ApiSuccessResponse<Publication>;

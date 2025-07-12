@@ -97,7 +97,7 @@ export const AboutUs = () => {
 					<div className="flex items-center justify-center py-4">
 						<Link
 							className="rounded-full bg-[#254152] p-4 text-base font-bold text-white uppercase"
-							to="/support"
+							to="/dues"
 						>
 							Support Us Today
 						</Link>

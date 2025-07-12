@@ -87,8 +87,8 @@ export const Header = () => {
 					<AboutLinks />
 				</div>
 				<NavLink
-					to="/support"
-					className={`text-base font-light tracking-wide hover:text-[#D55342] ${isLinkActive("/support") ? activeLink : inactiveLink} py-2`}
+					to="/dues"
+					className={`text-base font-light tracking-wide hover:text-[#D55342] ${isLinkActive("/dues") ? activeLink : inactiveLink} py-2`}
 					onClick={() => setMenuOpen(false)}
 				>
 					Dues
