@@ -1,5 +1,5 @@
 import { usePublications } from "@api/publications";
-import { BlogCard } from "@components/Blog";
+import { BlogCard } from "@components/Publications";
 import { Spinner } from "@components/shared";
 
 export const LatestNews = () => {

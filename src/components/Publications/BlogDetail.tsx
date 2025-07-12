@@ -1,4 +1,4 @@
-import { BlogBody, BloggerProfile } from "@components/Blog";
+import { BlogBody, BloggerProfile } from "@components/Publications";
 import type { PublicationDetailProps } from "@typings/publications";
 import { useEffect, useState } from "react";
 

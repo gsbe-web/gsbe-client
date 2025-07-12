@@ -4,15 +4,15 @@ import { Toaster } from "@components/ui/sonner";
 import { About } from "@pages/about";
 import { OurExecutives } from "@pages/about/executives";
 import { Membership } from "@pages/about/membership";
-import { Blog } from "@pages/blog";
-import { OpenedBlog } from "@pages/blog/slug";
 import { Contact } from "@pages/contact";
+import { Dues } from "@pages/dues";
 import { Events } from "@pages/events";
 import { EventDetails } from "@pages/events/slug";
 import { RsvpForm } from "@pages/events/slug/rsvp-form";
 import { Home } from "@pages/home";
 import { ErrorPage } from "@pages/not-found";
-import { Support } from "@pages/support";
+import { Publications } from "@pages/publications";
+import { OpenedPublication } from "@pages/publications/slug";
 import { Suspense } from "react";
 import { ErrorBoundary, type FallbackProps } from "react-error-boundary";
 import { Route, Routes } from "react-router";
@@ -37,8 +37,8 @@ export function App() {
 							</Route>
 
 							<Route path="publications">
-								<Route element={<Blog />} index={true} />
-								<Route element={<OpenedBlog />} path=":slug" />
+								<Route element={<Publications />} index={true} />
+								<Route element={<OpenedPublication />} path=":slug" />
 							</Route>
 
 							<Route path="events">
@@ -48,7 +48,7 @@ export function App() {
 							</Route>
 
 							<Route element={<Contact />} path="contact" />
-							<Route element={<Support />} path="dues" />
+							<Route element={<Dues />} path="dues" />
 							<Route element={<ErrorPage />} path="*" />
 						</Routes>
 					</Layout>
