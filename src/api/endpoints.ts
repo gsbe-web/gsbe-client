@@ -13,11 +13,11 @@ export const ENDPOINT_MAPPERS = {
 			getCalendarEvents: "/events/calendar",
 		},
 	},
-	NEWS: {
+	PUBLICATIONS: {
 		FEATURES_REGEX: /.*(news).*/,
 		V1: {
-			getBySlug: (slug: string) => `/news/slug/${slug}`,
-			list: "/news",
+			getBySlug: (slug: string) => `/publications/slug/${slug}`,
+			list: "/publications",
 		},
 	},
 };
