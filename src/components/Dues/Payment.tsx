@@ -1,5 +1,5 @@
 /** biome-ignore-all lint/nursery/noExcessiveLinesPerFunction: cool */
-import { PaymentForm } from "@components/Support/PaymentForm";
+import { PaymentForm } from "@components/Dues/PaymentForm";
 import {
 	Card,
 	CardContent,

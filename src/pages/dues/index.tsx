@@ -1,7 +1,7 @@
-import { AnnualMembershipDues, Heading, Payment } from "@components/Support";
+import { AnnualMembershipDues, Heading, Payment } from "@components/Dues";
 import { useEffect } from "react";
 
-export function Support() {
+export function Dues() {
 	useEffect(() => {
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	}, []);

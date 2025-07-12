@@ -1,4 +1,4 @@
-import { ShareDropDown } from "@components/Blog/Share";
+import { ShareDropDown } from "@components/Publications/Share";
 import { faCrown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { PublicationDetailProps } from "@typings/publications";
