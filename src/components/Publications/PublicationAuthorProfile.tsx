@@ -4,7 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { PublicationDetailProps } from "@typings/publications";
 import { formatTimestamp } from "@utils";
 
-export const BloggerProfile: React.FC<PublicationDetailProps> = (props) => {
+export const PublicationAuthorProfile: React.FC<PublicationDetailProps> = (
+	props,
+) => {
 	const { publication } = props;
 
 	const { date, time } = formatTimestamp(publication.dateTimePosted);
@@ -13,7 +15,7 @@ export const BloggerProfile: React.FC<PublicationDetailProps> = (props) => {
 		<div className="flex items-center justify-between text-lg">
 			<div className="my-2 flex items-center text-xs">
 				<img
-					alt="Blogger DP"
+					alt="Publication Author DP"
 					className="h-14 w-14 rounded-full object-cover"
 					src={publication.profileImageUrl}
 				/>

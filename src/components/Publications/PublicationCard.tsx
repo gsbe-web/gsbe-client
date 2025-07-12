@@ -16,7 +16,7 @@ import { Link } from "react-router";
 import TextTruncate from "react-text-truncate";
 import { stripHtml } from "string-strip-html";
 
-export const BlogCard: React.FC<PublicationDetailProps> = (props) => {
+export const PublicationCard: React.FC<PublicationDetailProps> = (props) => {
 	const { publication } = props;
 	const [liked, setLiked] = useState(false);
 	const [likeCount, setLikeCount] = useState(publication.likes);
@@ -47,7 +47,7 @@ export const BlogCard: React.FC<PublicationDetailProps> = (props) => {
 					<div className="flex items-center justify-between">
 						<div className="my-2 flex items-center text-xs text-black">
 							<img
-								alt="Blogger DP"
+								alt="Publication Author DP"
 								className="h-14 w-14 rounded-full object-cover"
 								src={publication.profileImageUrl}
 							/>

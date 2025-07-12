@@ -1,8 +1,11 @@
-import { BlogBody, BloggerProfile } from "@components/Publications";
+import {
+	PublicationAuthorProfile,
+	PublicationBody,
+} from "@components/Publications";
 import type { PublicationDetailProps } from "@typings/publications";
 import { useEffect, useState } from "react";
 
-export const BlogDetail: React.FC<PublicationDetailProps> = (props) => {
+export const PublicationDetail: React.FC<PublicationDetailProps> = (props) => {
 	const { publication } = props;
 
 	const [viewCount, setViewCount] = useState(publication.views);
@@ -25,9 +28,9 @@ export const BlogDetail: React.FC<PublicationDetailProps> = (props) => {
 	return (
 		<div className="px-4 py-14 md:px-10">
 			<div className="border p-4 py-10 md:px-20">
-				{/* Blog Post Content */}
-				<BloggerProfile publication={publication} />
-				<BlogBody publication={{ ...publication, views: viewCount }} />
+				{/* Publication Post Content */}
+				<PublicationAuthorProfile publication={publication} />
+				<PublicationBody publication={{ ...publication, views: viewCount }} />
 			</div>
 		</div>
 	);

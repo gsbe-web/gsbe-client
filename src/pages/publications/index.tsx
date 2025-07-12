@@ -1,5 +1,5 @@
 import { usePublications } from "@api/publications";
-import { BlogCard } from "@components/Publications";
+import { PublicationCard } from "@components/Publications";
 import { DynamicSearchBar, Paginated, Spinner } from "@components/shared";
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router";
@@ -58,7 +58,7 @@ export function Publications() {
 						{loadingStatus ||
 							posts.rows.map((post) => (
 								<div className="w-full md:w-120" key={post.id}>
-									<BlogCard publication={post} key={post.id} />
+									<PublicationCard publication={post} key={post.id} />
 								</div>
 							))}
 					</div>

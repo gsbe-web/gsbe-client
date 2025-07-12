@@ -18,7 +18,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { PublicationBodyProps } from "@typings/publications";
 import { useState } from "react";
 
-export const BlogBody: React.FC<PublicationBodyProps> = (props) => {
+export const PublicationBody: React.FC<PublicationBodyProps> = (props) => {
 	const { publication } = props;
 	const [liked, setLiked] = useState(false);
 	const [likeCount, setLikeCount] = useState<number>(publication.likes);

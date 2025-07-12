@@ -1,5 +1,5 @@
 import { usePublications } from "@api/publications";
-import { BlogCard } from "@components/Publications";
+import { PublicationCard } from "@components/Publications";
 import { Spinner } from "@components/shared";
 
 export const LatestNews = () => {
@@ -36,7 +36,7 @@ export const LatestNews = () => {
 									className="w-full shrink-0 lg:mx-auto lg:w-110"
 									key={post.id}
 								>
-									<BlogCard publication={post} key={post.id} />
+									<PublicationCard publication={post} key={post.id} />
 								</div>
 							))}
 					</div>

@@ -1,5 +1,5 @@
 import { usePublication } from "@api/publications";
-import { BlogDetail, RecentPosts } from "@components/Publications";
+import { PublicationDetail, RecentPosts } from "@components/Publications";
 import { DynamicSearchBar, Spinner } from "@components/shared";
 import { Link, useParams } from "react-router";
 
@@ -26,7 +26,7 @@ export function OpenedPublication() {
 								<DynamicSearchBar />
 							</div>
 						</div>
-						<BlogDetail publication={post} />
+						<PublicationDetail publication={post} />
 						<div className="mx-auto h-1 rounded bg-[#455D6B] md:w-4/5" />
 						<RecentPosts currentPostSlug={post.slug} />
 					</div>

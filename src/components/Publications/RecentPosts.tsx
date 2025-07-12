@@ -1,5 +1,5 @@
 import { usePublications } from "@api/publications";
-import { BlogCard } from "@components/Publications";
+import { PublicationCard } from "@components/Publications";
 import { Spinner } from "@components/shared";
 import { Link } from "react-router";
 
@@ -27,12 +27,11 @@ export const RecentPosts: React.FC<{ currentPostSlug: string }> = (props) => {
 				</div>
 			</div>
 			<div className="flex w-full flex-col gap-8 p-4 md:flex-row md:overflow-auto">
-				{/* Iterate over blogPosts array */}
 				{posts.rows
 					.filter((post: { slug: string }) => post.slug !== currentPostSlug)
 					.map((post) => (
 						<div className="mx-auto w-full md:w-120" key={post.id}>
-							<BlogCard publication={post} key={post.id} />
+							<PublicationCard publication={post} key={post.id} />
 						</div>
 					))}
 			</div>
