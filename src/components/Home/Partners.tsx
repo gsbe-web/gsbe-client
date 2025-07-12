@@ -9,11 +9,14 @@ export const Partners = () => {
 		<section className="space-y-8 p-5">
 			<h1 className="text-center text-4xl text-[#254152]">OUR PARTNERS</h1>
 			<div className="flex flex-col justify-between gap-8 md:flex-row lg:px-25">
-				{partners.map((_) => (
-					<div key={_.id} className="flex h-full items-center justify-center">
+				{partners.map((partner) => (
+					<div
+						key={partner.id}
+						className="flex h-full items-center justify-center"
+					>
 						<img
-							src={_.imageUrl}
-							alt={_.altName}
+							src={partner.imageUrl}
+							alt={partner.altName}
 							className="h-auto max-w-full"
 						/>
 					</div>

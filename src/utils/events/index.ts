@@ -4,9 +4,9 @@ import {
 	addDays,
 	endOfMonth,
 	endOfWeek,
-	format,
 	getDate,
 	getMonth,
+	isSameDay,
 	startOfMonth,
 	startOfWeek,
 } from "date-fns";
@@ -30,9 +30,7 @@ export const getDays = (currentDate: Date, events: CalendarEvent[] = []) => {
 		const day: Day = {
 			specDay: getDate(currentDay),
 			isCurrentMonth: getMonth(currentDay) === getMonth(currentDate),
-			isToday:
-				format(currentDay, "dd MMMM, yyyy") ===
-				format(new Date(), "dd MMMM, yyyy"),
+			isToday: isSameDay(currentDay, new Date()),
 			events: dayEvents,
 		};
 		days.push(day);

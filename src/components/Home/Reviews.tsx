@@ -41,7 +41,7 @@ const Display = ({ message, author }: ReviewItem) => {
 
 export const Reviews = () => {
 	const plugin = React.useRef(
-		Autoplay({ delay: 3000, stopOnMouseEnter: true, stopOnInteraction: true }),
+		Autoplay({ delay: 3000, stopOnMouseEnter: true, stopOnInteraction: false }),
 	);
 	return (
 		<section className="bg-[#EEEEED] py-5 text-center">
@@ -55,9 +55,9 @@ export const Reviews = () => {
 					className="w-full"
 				>
 					<CarouselContent>
-						{reviews.map((_) => (
-							<CarouselItem key={_.id} className="">
-								<Display message={_.message} author={_.author} />
+						{reviews.map((review) => (
+							<CarouselItem key={review.id} className="">
+								<Display message={review.message} author={review.author} />
 							</CarouselItem>
 						))}
 					</CarouselContent>

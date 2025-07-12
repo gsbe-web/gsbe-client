@@ -1,6 +1,10 @@
 import { ContactUs, GsbeMap } from "@components/Contact";
+import { useEffect } from "react";
 
 export function Contact() {
+	useEffect(() => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	}, []);
 	return (
 		<div className="min-h-screen bg-[#EAEAE8]">
 			<div className="p-0 md:p-12 lg:p-20">

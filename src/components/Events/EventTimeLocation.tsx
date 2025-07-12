@@ -1,5 +1,4 @@
 import type React from "react";
-// import { EventTime } from './EventTime'
 
 export const EventTimeLocation: React.FC<{
 	date: string;

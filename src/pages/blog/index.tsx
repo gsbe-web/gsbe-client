@@ -23,15 +23,19 @@ export function Blog() {
 		isFetching,
 	} = useNewsList({ pageSize: 10, page: currentPage });
 
-	if (isLoading || isFetching) {
-		return <Spinner isLoading={true} />;
-	}
-	if (isError) {
-		return <p>Failed to load posts</p>;
-	}
 	if (!posts) {
 		return <p>Posts not found</p>;
 	}
+
+	const loadingStatus = (() => {
+		if (isLoading || isFetching) {
+			return <Spinner isLoading={true} />;
+		}
+		if (isError) {
+			return <p>Failed to load posts</p>;
+		}
+		return null;
+	})();
 
 	return (
 		<div>
@@ -51,11 +55,12 @@ export function Blog() {
 						</div>
 					</div>
 					<div className="flex flex-wrap justify-center gap-8 p-4">
-						{posts.rows.map((post) => (
-							<div className="w-full md:w-120" key={post.id}>
-								<BlogCard blogPost={post} key={post.id} />
-							</div>
-						))}
+						{loadingStatus ||
+							posts.rows.map((post) => (
+								<div className="w-full md:w-120" key={post.id}>
+									<BlogCard blogPost={post} key={post.id} />
+								</div>
+							))}
 					</div>
 					<div>
 						<Paginated

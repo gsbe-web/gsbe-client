@@ -86,7 +86,7 @@ const Holder = ({ consumable }: { consumable: CarouselConsumable }) => {
 
 export function WelcomeCarousel() {
 	const plugin = React.useRef(
-		Autoplay({ delay: 4000, stopOnMouseEnter: true, stopOnInteraction: true }),
+		Autoplay({ delay: 4000, stopOnMouseEnter: true, stopOnInteraction: false }),
 	);
 
 	return (
@@ -97,9 +97,9 @@ export function WelcomeCarousel() {
 				className="w-full"
 			>
 				<CarouselContent>
-					{consumables.map((_) => (
-						<CarouselItem key={_.id} className="w-full">
-							<Holder consumable={_} />
+					{consumables.map((consumable) => (
+						<CarouselItem key={consumable.id} className="w-full">
+							<Holder consumable={consumable} />
 						</CarouselItem>
 					))}
 				</CarouselContent>
