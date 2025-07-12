@@ -38,9 +38,9 @@ const consumables: CarouselConsumable[] = [
 		id: 2,
 		text: "Empowering Healthcare Through Innovation and Engineering",
 		imageUrl: "/images/officialgsbe_cover_about.jpeg",
-		textColor: "#F4CE50",
+		textColor: "#F4CE4F",
 		fontStyle: "font-poppins",
-		fontWeight: "font-bold",
+		fontWeight: "font-black",
 	},
 	{
 		id: 3,
@@ -60,8 +60,9 @@ const Holder = ({ consumable }: { consumable: CarouselConsumable }) => {
 				style={{
 					backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${consumable.imageUrl})`,
 					backgroundBlendMode: "darken",
+					color: consumable.textColor,
 				}}
-				className={`relative text-center text-4xl md:text-5xl text-[${consumable.textColor}] flex h-full w-full flex-col items-center overflow-hidden bg-cover bg-center`}
+				className="relative flex h-full w-full flex-col items-center overflow-hidden bg-cover bg-center text-center text-4xl md:text-5xl"
 			>
 				<div
 					className={`absolute top-1/4 ${consumable.textTransform} flex flex-col justify-center tracking-wide ${consumable.fontWeight} space-y-4`}

@@ -1,5 +1,5 @@
 import {
-	LatestNews,
+	LatestPublications,
 	MissionStatement,
 	OurEvents,
 	Partners,
@@ -18,7 +18,7 @@ export function Home() {
 			<WelcomeCarousel />
 			<MissionStatement />
 			<OurEvents />
-			<LatestNews />
+			<LatestPublications />
 			<div>
 				<PresidentsMessage />
 				<Reviews />

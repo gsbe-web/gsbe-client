@@ -1,4 +1,4 @@
-export * from "./LatestNews";
+export * from "./LatestPublications";
 export * from "./MainEvent";
 export * from "./MissionStatement";
 export * from "./OurEvents";

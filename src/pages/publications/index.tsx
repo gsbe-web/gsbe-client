@@ -23,16 +23,16 @@ export function Publications() {
 		isFetching,
 	} = usePublications({ pageSize: 10, page: currentPage });
 
-	if (!posts) {
-		return <p>Posts not found</p>;
-	}
-
 	const loadingStatus = (() => {
 		if (isLoading || isFetching) {
 			return <Spinner isLoading={true} />;
 		}
 		if (isError) {
 			return <p>Failed to load posts</p>;
+		}
+
+		if (!posts) {
+			return <p>Posts not found</p>;
 		}
 		return null;
 	})();
@@ -43,7 +43,7 @@ export function Publications() {
 				<div className="bg-white py-6 text-[#687982]">
 					<div className="text-center align-middle leading-8">
 						<h1 className="text-4xl font-extrabold tracking-widest text-[#D55342] uppercase">
-							News
+							Publications
 						</h1>
 					</div>
 					<div>
@@ -56,7 +56,7 @@ export function Publications() {
 					</div>
 					<div className="flex flex-wrap justify-center gap-8 p-4">
 						{loadingStatus ||
-							posts.rows.map((post) => (
+							posts?.rows.map((post) => (
 								<div className="w-full md:w-120" key={post.id}>
 									<PublicationCard publication={post} key={post.id} />
 								</div>
@@ -66,7 +66,7 @@ export function Publications() {
 						<Paginated
 							currentPage={currentPage}
 							onPageChange={setCurrentPage}
-							totalPages={posts.totalPages}
+							totalPages={posts?.totalPages || 1}
 						/>
 					</div>
 				</div>

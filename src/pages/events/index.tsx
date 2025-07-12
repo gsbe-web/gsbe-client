@@ -56,7 +56,7 @@ export function Events() {
 						))}
 				</div>
 
-				{events && events.totalPages > 1 && (
+				{events && events.totalPages >= 1 && (
 					<div>
 						<Paginated
 							currentPage={currentPage}

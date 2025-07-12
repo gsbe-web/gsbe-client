@@ -2,7 +2,7 @@ import { usePublications } from "@api/publications";
 import { PublicationCard } from "@components/Publications";
 import { Spinner } from "@components/shared";
 
-export const LatestNews = () => {
+export const LatestPublications = () => {
 	const { data: posts, isLoading, isError } = usePublications({ pageSize: 4 });
 
 	if (!posts) {
@@ -24,7 +24,7 @@ export const LatestNews = () => {
 	return (
 		<div className="bg-[#FFFFFF]">
 			<div className="text-center text-4xl font-extrabold tracking-wider text-[#254152] uppercase">
-				Latest News
+				Latest Publications
 			</div>
 
 			<div className="flex flex-col justify-center">
