@@ -1,0 +1,11 @@
+.github
+.husky
+.vscode
+.zed
+dist
+node_modules
+*.log
+*.md
+.git
+.gitignore
+.env
