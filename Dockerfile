@@ -9,7 +9,7 @@ RUN yarn global add serve
 
 COPY . .
 ENV NODE_ENV=production
-ENV VITE_API_BASE_URL=http://gsbe-server.railway.internal:3500/api/v1
+ENV VITE_API_BASE_URL=https://gsbe-server-production.up.railway.app/api/v1
 RUN yarn build
 
 EXPOSE 3000
