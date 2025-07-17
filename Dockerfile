@@ -8,10 +8,8 @@ RUN yarn install --frozen-lockfile --ignore-scripts
 RUN yarn global add serve
 
 COPY . .
-
-ARG VITE_API_URL
-ENV VITE_API_URL=https://gsbe-server.vercel.app/api/v1/
-
+ENV NODE_ENV=production
+ENV VITE_API_BASE_URL=https://gsbe-server.vercel.app/api/v1/
 RUN yarn build
 
 EXPOSE 3000

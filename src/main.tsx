@@ -11,9 +11,9 @@ const queryClient = new QueryClient();
 
 async function enableMocking() {
 	// TODO: uncomment this line
-	// if (process.env.NODE_ENV !== 'development') {
-	//   return
-	// }
+	if (import.meta.env.NODE_ENV !== "development") {
+		return;
+	}
 	const { worker } = await import("./mocks/browser");
 	return worker.start();
 }
