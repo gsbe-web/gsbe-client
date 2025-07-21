@@ -20,4 +20,11 @@ export const ENDPOINT_MAPPERS = {
 			list: "/publications",
 		},
 	},
+	MEMBERS: {
+		FEATURES_REGEX: /.*(members).*/,
+		V1: {
+			getBySlug: (slug: string) => `/members/slug/${slug}`,
+			list: "/members",
+		},
+	},
 };

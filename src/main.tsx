@@ -10,7 +10,6 @@ import { App } from "./App";
 const queryClient = new QueryClient();
 
 async function enableMocking() {
-	// TODO: uncomment this line
 	if (import.meta.env.NODE_ENV !== "development") {
 		return;
 	}

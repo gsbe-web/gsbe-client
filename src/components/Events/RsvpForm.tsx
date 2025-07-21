@@ -1,30 +1,42 @@
 import { useEvent } from "@api/events";
 import { Spinner } from "@components/shared";
+import {
+	Button,
+	Form,
+	FormControl,
+	FormField,
+	FormItem,
+	FormLabel,
+	FormMessage,
+	Input,
+} from "@components/ui";
+import { valibotResolver } from "@hookform/resolvers/valibot";
+import { type RsvpData, RsvpSchema } from "@typings/events/rsvp";
 import { formatTimestamp } from "@utils";
 
 import { logger } from "loggers";
-import { useId, useState } from "react";
+import { CalendarCheck2 } from "lucide-react";
+import { useForm } from "react-hook-form";
 import { useParams } from "react-router";
+import { toast } from "sonner";
 
 export const EventForm = () => {
-	const [formData, setFormData] = useState({
-		firstName: "",
-		lastName: "",
-		email: "",
+	const form = useForm<RsvpData>({
+		resolver: valibotResolver(RsvpSchema),
+		defaultValues: {
+			firstName: "",
+			lastName: "",
+			email: "",
+		},
 	});
-	const emaiId = useId();
-	const firstNameId = useId();
-	const lastNameId = useId();
 
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const { name, value } = e.target;
-		setFormData({ ...formData, [name]: value });
-	};
-
-	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
-		// Add form submission logic here
-		logger.info(formData);
+	const onSubmit = (values: RsvpData) => {
+		toast.success("Rsvp Submitted Successfully", {
+			position: "top-right",
+			closeButton: true,
+			icon: <CalendarCheck2 color="green" />,
+		});
+		logger.info("Rsvp Submitted Successfully:", values);
 	};
 
 	const { slug } = useParams();
@@ -52,70 +64,68 @@ export const EventForm = () => {
 					<h2 className="mb-6 text-2xl font-bold text-green-800">
 						Add Your Details
 					</h2>
-					<form autoComplete="on" className="space-y-6" onSubmit={handleSubmit}>
-						<div className="flex space-x-6">
-							<div className="w-1/2">
-								<label
-									className="block text-sm font-medium text-gray-700"
-									htmlFor="firstName"
-								>
-									<span className="text-red-600">*</span>First Name
-								</label>
-								<input
-									className="mt-1 block w-full border border-gray-300 p-2 shadow-sm"
-									id={firstNameId}
-									name="firstName"
-									onChange={handleChange}
-									required={true}
-									type="text"
-									value={formData.firstName}
-								/>
-							</div>
-							<div className="w-1/2">
-								<label
-									className="block text-sm font-medium text-gray-700"
-									htmlFor="lastName"
-								>
-									<span className="text-red-600">*</span>Last Name
-								</label>
-								<input
-									className="mt-1 block w-full border border-gray-300 p-2 shadow-sm"
-									id={lastNameId}
-									name="lastName"
-									onChange={handleChange}
-									required={true}
-									type="text"
-									value={formData.lastName}
-								/>
-							</div>
-						</div>
-						<div>
-							<label
-								className="block text-sm font-medium text-gray-700"
-								htmlFor="email"
-							>
-								<span className="text-red-600">*</span>Email
-								<input
-									autoComplete="on"
-									className="mt-1 block w-full border border-gray-300 p-2 shadow-sm"
-									id={emaiId}
-									name="email"
-									onChange={handleChange}
-									required={true}
-									type="email"
-									value={formData.email}
-								/>
-							</label>
-						</div>
-						<button
-							className="w-full bg-gray-700 px-4 py-2 font-semibold text-white hover:bg-gray-800 focus:outline-none"
-							type="submit"
+					<Form {...form}>
+						<form
+							autoComplete="on"
+							onSubmit={form.handleSubmit(onSubmit)}
+							className="space-y-6 text-gray-700"
 						>
-							SUBMIT
-						</button>
-					</form>
+							<div className="flex gap-6">
+								<FormField
+									control={form.control}
+									name="firstName"
+									render={({ field }) => (
+										<FormItem className="w-full">
+											<FormLabel>
+												<span className="text-red-600">*</span>First Name:
+											</FormLabel>
+											<FormControl>
+												<Input {...field} type="text" className="p-5" />
+											</FormControl>
+											<FormMessage />
+										</FormItem>
+									)}
+								/>
+								<FormField
+									control={form.control}
+									name="lastName"
+									render={({ field }) => (
+										<FormItem className="w-full">
+											<FormLabel>
+												<span className="text-red-600">*</span>Last Name:
+											</FormLabel>
+											<FormControl>
+												<Input {...field} type="text" className="p-5" />
+											</FormControl>
+											<FormMessage />
+										</FormItem>
+									)}
+								/>
+							</div>
+							<FormField
+								control={form.control}
+								name="email"
+								render={({ field }) => (
+									<FormItem>
+										<FormLabel>
+											<span className="text-red-600">*</span>Email:
+										</FormLabel>
+										<FormControl>
+											<Input {...field} type="email" className="p-5" />
+										</FormControl>
+										<FormMessage />
+									</FormItem>
+								)}
+							/>
+							<Button
+								type="submit"
+								className="w-full bg-gray-700 p-4 font-semibold hover:bg-gray-800"
+							>
+								Submit
+							</Button>
+						</form>
+					</Form>
 				</div>
-
 				<div className="border-gray w-full border border-solid bg-gray-100 p-6 shadow-sm md:w-[320px]">
 					<h3 className="text-xl font-semibold text-green-800">
 						{event.title}
