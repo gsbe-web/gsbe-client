@@ -10,7 +10,7 @@ import { App } from "./App";
 const queryClient = new QueryClient();
 
 async function enableMocking() {
-	if (import.meta.env.NODE_ENV !== "development") {
+	if (import.meta.env.VITE_NODE_ENV !== "development") {
 		return;
 	}
 	const { worker } = await import("./mocks/browser");
