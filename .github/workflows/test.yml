@@ -15,19 +15,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository code
+        uses: actions/checkout@v4
 
-      - uses: borales/actions-yarn@v4
-        with: 
-          cmd: 'install'
-
-      - uses: actions/setup-node@v4
+      - name: Initialize Node
+        uses: actions/setup-node@v4
         with:
-          node-version: "22"
-          cache: "yarn"
+          node-version: 22
 
-      - name: Install dependencies
-        run: yarn install
+      - name: Install yarn
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
 
       - name: Validate
         run: yarn lint
