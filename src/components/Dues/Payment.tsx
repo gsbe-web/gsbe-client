@@ -29,22 +29,22 @@ export function Payment() {
 					<Tabs defaultValue="account" className="h-full px-4">
 						<TabsList>
 							<TabsTrigger value="account">
-								<FontAwesomeIcon icon={faFileInvoice} size="2x" />
+								<FontAwesomeIcon icon={faFileInvoice} size="lg" />
 							</TabsTrigger>
 							<TabsTrigger value="visa" disabled={true}>
-								<FontAwesomeIcon icon={faCcVisa} size="5x" />
+								<FontAwesomeIcon icon={faCcVisa} size="lg" />
 							</TabsTrigger>
 							<TabsTrigger value="master" disabled={true}>
-								<FontAwesomeIcon icon={faCcMastercard} size="5x" />
+								<FontAwesomeIcon icon={faCcMastercard} size="lg" />
 							</TabsTrigger>
 							<TabsTrigger value="google" disabled={true}>
-								<FontAwesomeIcon icon={faGooglePay} size="5x" />
+								<FontAwesomeIcon icon={faGooglePay} size="lg" />
 							</TabsTrigger>
 							<TabsTrigger value="apple" disabled={true}>
-								<FontAwesomeIcon icon={faApplePay} size="5x" />
+								<FontAwesomeIcon icon={faApplePay} size="lg" />
 							</TabsTrigger>
 							<TabsTrigger value="paypal" disabled={true}>
-								<FontAwesomeIcon icon={faPaypal} size="5x" />
+								<FontAwesomeIcon icon={faPaypal} size="lg" />
 							</TabsTrigger>
 						</TabsList>
 						<TabsContent value="account">
