@@ -6,10 +6,13 @@ import { expect, it } from "vitest";
 
 it("renders apple", async () => {
 	const { user } = render(<App />);
+	const expectedLinkCount = 6;
 
 	expect(screen.getByText("Loading...")).toBeInTheDocument();
 
-	await expect(screen.findAllByRole("link")).resolves.toHaveLength(6);
+	await expect(screen.findAllByRole("link")).resolves.toHaveLength(
+		expectedLinkCount,
+	);
 
 	const button = await screen.findByRole("link", { name: /Apple/ });
 	await user.click(button);
@@ -18,9 +21,12 @@ it("renders apple", async () => {
 });
 
 it("renders home page when trying to access an invalid fruit", async () => {
+	const expectedLinkCount = 6;
 	render(<App />, { route: "/invalid-fruit" });
 
-	await expect(screen.findAllByRole("link")).resolves.toHaveLength(6);
+	await expect(screen.findAllByRole("link")).resolves.toHaveLength(
+		expectedLinkCount,
+	);
 });
 
 it("renders error", async () => {

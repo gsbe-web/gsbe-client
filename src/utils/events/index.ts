@@ -1,3 +1,5 @@
+/** biome-ignore-all lint/nursery/noMagicNumbers: necessary */
+
 import type { CalendarEvent } from "@api/events";
 import type { Day } from "@typings/events";
 import {

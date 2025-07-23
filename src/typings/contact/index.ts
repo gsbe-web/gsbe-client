@@ -1,3 +1,5 @@
+/** biome-ignore-all lint/nursery/noMagicNumbers: necessary */
+
 import { isValidPhoneNumber } from "react-phone-number-input";
 import * as v from "valibot";
 

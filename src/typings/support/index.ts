@@ -1,3 +1,5 @@
+/** biome-ignore-all lint/nursery/noMagicNumbers: necessary */
+
 import * as v from "valibot";
 
 export const Currencies = {

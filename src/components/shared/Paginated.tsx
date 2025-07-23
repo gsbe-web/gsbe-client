@@ -14,6 +14,9 @@ type PaginationProps = {
 	totalPages: number;
 	onPageChange: (data: number) => void;
 };
+
+const MAX_VISIBLE_PAGES = 5;
+
 export function Paginated(props: PaginationProps) {
 	const { currentPage, totalPages, onPageChange } = props;
 	const [_params, setSearchParams] = useSearchParams();
@@ -49,7 +52,10 @@ export function Paginated(props: PaginationProps) {
 					</Button>
 				</PaginationItem>
 				{Array.from(
-					{ length: totalPages > 5 ? 5 : totalPages },
+					{
+						length:
+							totalPages > MAX_VISIBLE_PAGES ? MAX_VISIBLE_PAGES : totalPages,
+					},
 					(_, i) => 1 + i,
 				).map((n) => (
 					<PaginationItem key={n}>
@@ -58,7 +64,7 @@ export function Paginated(props: PaginationProps) {
 						</PaginationLink>
 					</PaginationItem>
 				))}
-				{totalPages > 5 && (
+				{totalPages > MAX_VISIBLE_PAGES && (
 					<PaginationItem>
 						<PaginationEllipsis />
 					</PaginationItem>

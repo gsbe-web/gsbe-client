@@ -16,7 +16,7 @@
     "lint:tsc": "tsc -b",
     "lint": "biome lint --write",
     "format": "biome format --write",
-    "format:lint:staged": "biome check --write --no-errors-on-unmatched",
+    "format:lint:staged": "biome check --write",
     "validate": "lint && test:ci && test:e2e:ci",
     "build": "vite build",
     "preview": "vite preview",
@@ -122,7 +122,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "biome check --write --no-errors-on-unmatched"
+      "biome check --write"
     ]
   },
   "husky": {

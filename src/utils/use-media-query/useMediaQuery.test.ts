@@ -1,3 +1,5 @@
+/** biome-ignore-all lint/nursery/noSecrets: not a secret */
+
 import { act, renderHook } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { useMediaQuery } from "./useMediaQuery";
