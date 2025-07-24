@@ -59,7 +59,11 @@ export function Paginated(props: PaginationProps) {
 					(_, i) => 1 + i,
 				).map((n) => (
 					<PaginationItem key={n}>
-						<PaginationLink href={`?page=${n}`} isActive={currentPage === n}>
+						<PaginationLink
+							className="text-[#254152]"
+							href={`?page=${n}`}
+							isActive={currentPage === n}
+						>
 							{n}
 						</PaginationLink>
 					</PaginationItem>
