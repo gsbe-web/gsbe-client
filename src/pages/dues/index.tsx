@@ -5,6 +5,7 @@ export function Dues() {
 	useEffect(() => {
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	}, []);
+
 	return (
 		<div className="w-full bg-[#EAEAE8]">
 			<div className="w-full md:px-12 lg:px-20">

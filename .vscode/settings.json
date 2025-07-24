@@ -6,10 +6,6 @@
 		"source.action.useSortedKeys.biome": "explicit",
 		"source.action.useSortedProperties.biome": "explicit"
 	},
-	"emmet.includeLanguages": {
-		"javascript": "javascriptreact",
-		"typescript": "typescriptreact"
-	},
 	"emmet.triggerExpansionOnTab": true,
 	"emmet.syntaxProfiles": {
 		"javascript": "jsx",

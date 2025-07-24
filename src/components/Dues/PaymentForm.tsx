@@ -1,4 +1,5 @@
 /** biome-ignore-all lint/nursery/noExcessiveLinesPerFunction: cool */
+import { useDue } from "@api/dues/dues.service";
 import { cn } from "@components/lib/utils";
 import {
 	Button,
@@ -18,34 +19,75 @@ import {
 	Label,
 } from "@components/ui";
 import { valibotResolver } from "@hookform/resolvers/valibot";
-import { logger } from "@loggers";
 import { DropdownMenu } from "@radix-ui/react-dropdown-menu";
-import { Currencies, type DuesData, DuesSchema } from "@typings/support";
+import {
+	Currencies,
+	type DuesData,
+	DuesSchema,
+	transform,
+} from "@typings/dues";
 import { ChevronsUpDown, Handshake } from "lucide-react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useSearchParams } from "react-router";
+import { DotLoader } from "react-spinners";
 import { toast } from "sonner";
 
 export const PaymentForm = () => {
+	const dueMutation = useDue();
+	const [searchParams, setSearchParams] = useSearchParams();
+	const success = searchParams.get("success");
+	// const reference = searchParams.get("reference");
+
+	useEffect(() => {
+		if (success === "true") {
+			toast.success("Payment made successfully", {
+				position: "top-right",
+				closeButton: true,
+				icon: <Handshake color="green" />,
+			});
+		}
+	});
+
+	useEffect(() => {
+		setSearchParams({});
+	}, [setSearchParams]);
+
 	const form = useForm<DuesData>({
 		resolver: valibotResolver(DuesSchema),
 		defaultValues: {
 			firstName: "",
 			lastName: "",
 			membershipId: "",
-			emailAddress: "",
+			email: "",
 			currency: "GHS",
-			amount: 0.1,
+			amount: 0,
 		},
 	});
 
-	//TODO:: implement backend for sending such message to an actual receipient
+	const loadingStatus = (() => {
+		if (dueMutation.isPending) {
+			return (
+				<DotLoader
+					aria-label="Loading Spinner"
+					color="#3B82F6"
+					data-testid="loader"
+					loading={dueMutation.isPending}
+					size={30}
+					className="mx-auto"
+				/>
+			);
+		}
+		if (dueMutation.isError) {
+			return (
+				<p className="mt-20 text-center text-red-500">Failed to load data</p>
+			);
+		}
+		return null;
+	})();
+
 	const onSubmit = (values: DuesData) => {
-		toast.success("Payment Made successfully", {
-			position: "top-right",
-			closeButton: true,
-			icon: <Handshake color="green" />,
-		});
-		logger.info(values);
+		dueMutation.mutate(values);
 	};
 	return (
 		<Form {...form}>
@@ -92,7 +134,7 @@ export const PaymentForm = () => {
 					/>
 					<FormField
 						control={form.control}
-						name="emailAddress"
+						name="email"
 						render={({ field }) => (
 							<FormItem>
 								<FormLabel>Email Address:</FormLabel>
@@ -146,7 +188,16 @@ export const PaymentForm = () => {
 								render={({ field }) => (
 									<FormItem className="w-full">
 										<FormControl>
-											<Input {...field} type="number" className="" />
+											<Input
+												{...field}
+												onChange={(e) => field.onChange(transform.output(e))}
+												value={transform.input(field.value)}
+												type="number"
+												placeholder="0.1"
+												min="0.1"
+												step="any"
+												className=""
+											/>
 										</FormControl>
 										<FormMessage />
 									</FormItem>
@@ -157,6 +208,7 @@ export const PaymentForm = () => {
 					<Button type="submit" className="bg-[#254152] hover:bg-[#1e3544]">
 						Make Payment
 					</Button>
+					{loadingStatus}
 				</div>
 			</form>
 		</Form>

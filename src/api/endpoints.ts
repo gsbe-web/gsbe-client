@@ -27,4 +27,10 @@ export const ENDPOINT_MAPPERS = {
 			list: "/members",
 		},
 	},
+	DUES: {
+		FEATURES_REGEX: /.*(dues).*/,
+		V1: {
+			create: "/dues",
+		},
+	},
 };

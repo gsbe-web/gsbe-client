@@ -41,6 +41,7 @@ export const handlers = [
 		logger.info("Fetched events: ", request.method, request.url, request.body);
 		return;
 	}),
+
 	http.get(ENDPOINT_MAPPERS.PUBLICATIONS.FEATURES_REGEX, ({ request }) => {
 		logger.info(
 			"Fetched publications: ",
@@ -48,6 +49,16 @@ export const handlers = [
 			request.url,
 			request.body,
 		);
+		return;
+	}),
+
+	http.get(ENDPOINT_MAPPERS.MEMBERS.FEATURES_REGEX, ({ request }) => {
+		logger.info("Fetched members: ", request.method, request.url, request.body);
+		return;
+	}),
+
+	http.post(ENDPOINT_MAPPERS.DUES.FEATURES_REGEX, ({ request }) => {
+		logger.info("Create due: ", request.method, request.url, request.body);
 		return;
 	}),
 ];
