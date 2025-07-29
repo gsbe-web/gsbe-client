@@ -1,4 +1,5 @@
 /** biome-ignore-all lint/nursery/noExcessiveLinesPerFunction: allowed */
+import { useContact } from "@api/contact";
 import { useUserLocation } from "@api/location";
 import {
 	Button,
@@ -12,13 +13,11 @@ import {
 	Textarea,
 } from "@components/ui";
 import { valibotResolver } from "@hookform/resolvers/valibot";
-import { logger } from "@loggers";
 import { type ContactData, ContactSchema } from "@typings/contact";
-import { Send } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import type { Country } from "react-phone-number-input";
-import { toast } from "sonner";
+import { DotLoader } from "react-spinners";
 
 export const ContactForm = () => {
 	const [country] = useState<Country>("GH");
@@ -28,21 +27,39 @@ export const ContactForm = () => {
 		defaultValues: {
 			name: "",
 			email: "",
-			phone: "",
+			phoneNumber: "",
 			subject: "",
 			message: "",
 		},
 	});
 
-	//TODO:: implement backend for sending such message to an actual receipient
+	const contactMutation = useContact();
+
+	const loadingStatus = (() => {
+		if (contactMutation.isPending) {
+			return (
+				<DotLoader
+					aria-label="Loading Spinner"
+					color="#3B82F6"
+					data-testid="loader"
+					loading={contactMutation.isPending}
+					size={30}
+					className="mx-auto"
+				/>
+			);
+		}
+		if (contactMutation.isError) {
+			return (
+				<p className="mt-20 text-center text-red-500">Failed to load data</p>
+			);
+		}
+		return null;
+	})();
+
 	const onSubmit = (values: ContactData) => {
-		toast.success("Message sent successfully", {
-			position: "top-right",
-			closeButton: true,
-			icon: <Send color="green" />,
-		});
-		logger.info(values);
+		contactMutation.mutate(values);
 	};
+
 	return (
 		<Form {...form}>
 			<form
@@ -105,7 +122,7 @@ export const ContactForm = () => {
 					/>
 					<FormField
 						control={form.control}
-						name="phone"
+						name="phoneNumber"
 						render={({ field }) => (
 							<FormItem className="min-h-12 flex-1">
 								<FormControl>
@@ -151,6 +168,7 @@ export const ContactForm = () => {
 				<Button className="mx-auto w-fit cursor-pointer" variant="outline">
 					Submit
 				</Button>
+				{loadingStatus}
 			</form>
 		</Form>
 	);

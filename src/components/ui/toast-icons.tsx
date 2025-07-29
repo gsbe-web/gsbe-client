@@ -1,4 +1,4 @@
-import { CircleAlert, ClockFading } from "lucide-react";
+import { CircleAlert, ClockFading, Send } from "lucide-react";
 
 export function ErrorIcon() {
   return <CircleAlert color="red" />;
@@ -6,4 +6,8 @@ export function ErrorIcon() {
 
 export function ClockFadingIcon() {
   return <ClockFading color="#F59E0B" />;
+}
+
+export function SentIcon() {
+  return <Send color="green" />
 }

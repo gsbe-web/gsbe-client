@@ -33,4 +33,10 @@ export const ENDPOINT_MAPPERS = {
 			create: "/dues",
 		},
 	},
+	CONTACT: {
+		FEATURES_REGEX: /.*(contact).*/,
+		V1: {
+			submit: "/contact",
+		},
+	},
 };

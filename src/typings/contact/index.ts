@@ -15,7 +15,7 @@ export const ContactSchema = v.object({
 		v.trim(),
 		v.minLength(2, "Subject should not be less than two characters long"),
 	),
-	phone: v.pipe(
+	phoneNumber: v.pipe(
 		v.string("Enter your phone number"),
 		v.trim(),
 		v.minLength(7, "Phone number should not be less than two characters long"),

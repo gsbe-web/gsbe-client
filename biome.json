@@ -1,150 +1,150 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
-  "vcs": {
-    "enabled": false,
-    "clientKind": "git",
-    "useIgnoreFile": false
-  },
-  "files": {
-    "ignoreUnknown": false
-  },
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "tab"
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "a11y": "error",
-      "complexity": "error",
-      "correctness": "error",
-      "nursery": "error",
-      "performance": "error",
-      "recommended": true,
-      "security": "error",
-      "style": "error",
-      "suspicious": "error"
-    }
-  },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "double"
-    }
-  },
-  "assist": {
-    "enabled": true,
-    "actions": {
-      "source": {
-        "organizeImports": "on"
-      }
-    }
-  },
-  "overrides": [
-    {
-      "includes": ["**/*"],
-      "linter": {
-        "rules": {
-          "correctness": {
-            "useImportExtensions": "off",
-            "noUndeclaredDependencies": "off"
-          },
-          "nursery": {
-            "noDestructuredProps": "off",
-            "noUnresolvedImports": "off",
-            "noUnknownAtRule": "off",
-            "useExplicitType": "off",
-            "useForComponent": "off",
-            "useExportsLast": "off",
-            "useSortedClasses": "off",
-            "noImportantStyles": "off",
-            "noExcessiveLinesPerFunction": "off"
-          },
-          "suspicious": {
-            "noReactSpecificProps": "off"
-          },
-          "performance": {
-            "noBarrelFile": "off",
-            "noReExportAll": "off",
-            "noImgElement": "off",
-            "noNamespaceImport": "off"
-          },
-          "style": {
-            "useNamingConvention": {
-              "level": "error",
-              "options": {
-                "strictCase": false,
-                "requireAscii": true
-              }
-            },
-            "useFilenamingConvention": {
-              "level": "error",
-              "options": {
-                "strictCase": false,
-                "requireAscii": true,
-                "filenameCases": ["camelCase", "kebab-case", "PascalCase"]
-              }
-            },
-            "useComponentExportOnlyModules": "off"
-          }
-        }
-      }
-    },
-    {
-      "includes": ["vite.config.ts", "playwright.config.ts"],
-      "linter": {
-        "rules": {
-          "correctness": {
-            "noNodejsModules": "off"
-          },
-          "style": {
-            "noDefaultExport": "off"
-          }
-        }
-      }
-    },
-    {
-      "includes": ["src/**/*.test.tsx"],
-      "linter": {
-        "rules": {
-          "performance": {
-            "useTopLevelRegex": "off"
-          },
-          "nursery": {
-            "noExcessiveLinesPerFunction": "off"
-          }
-        }
-      }
-    },
-    {
-      "includes": ["public/**"],
-      "formatter": {
-        "enabled": false
-      },
-      "linter": {
-        "enabled": false
-      }
-    },
-    {
-      "includes": ["dist/**"],
-      "formatter": {
-        "enabled": false
-      },
-      "linter": {
-        "enabled": false
-      }
-    },
-    {
-      "includes": ["src/components/ui/**"],
-      "formatter": {
-        "enabled": false
-      },
-      "linter": {
-        "rules": {
-          "nursery": {
-            "noSecrets": "off"
-          }
-        }
-      }
-    }
-  ]
+	"$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
+	"vcs": {
+		"enabled": false,
+		"clientKind": "git",
+		"useIgnoreFile": false
+	},
+	"files": {
+		"ignoreUnknown": false
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab"
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"a11y": "error",
+			"complexity": "error",
+			"correctness": "error",
+			"nursery": "error",
+			"performance": "error",
+			"recommended": true,
+			"security": "error",
+			"style": "error",
+			"suspicious": "error"
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "double"
+		}
+	},
+	"assist": {
+		"enabled": true,
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
+	},
+	"overrides": [
+		{
+			"includes": ["**/*"],
+			"linter": {
+				"rules": {
+					"correctness": {
+						"useImportExtensions": "off",
+						"noUndeclaredDependencies": "off"
+					},
+					"nursery": {
+						"noDestructuredProps": "off",
+						"noUnresolvedImports": "off",
+						"noUnknownAtRule": "off",
+						"useExplicitType": "off",
+						"useForComponent": "off",
+						"useExportsLast": "off",
+						"useSortedClasses": "off",
+						"noImportantStyles": "off",
+						"noExcessiveLinesPerFunction": "off"
+					},
+					"suspicious": {
+						"noReactSpecificProps": "off"
+					},
+					"performance": {
+						"noBarrelFile": "off",
+						"noReExportAll": "off",
+						"noImgElement": "off",
+						"noNamespaceImport": "off"
+					},
+					"style": {
+						"useNamingConvention": {
+							"level": "error",
+							"options": {
+								"strictCase": false,
+								"requireAscii": true
+							}
+						},
+						"useFilenamingConvention": {
+							"level": "error",
+							"options": {
+								"strictCase": false,
+								"requireAscii": true,
+								"filenameCases": ["camelCase", "kebab-case", "PascalCase"]
+							}
+						},
+						"useComponentExportOnlyModules": "off"
+					}
+				}
+			}
+		},
+		{
+			"includes": ["vite.config.ts", "playwright.config.ts"],
+			"linter": {
+				"rules": {
+					"correctness": {
+						"noNodejsModules": "off"
+					},
+					"style": {
+						"noDefaultExport": "off"
+					}
+				}
+			}
+		},
+		{
+			"includes": ["src/**/*.test.tsx"],
+			"linter": {
+				"rules": {
+					"performance": {
+						"useTopLevelRegex": "off"
+					},
+					"nursery": {
+						"noExcessiveLinesPerFunction": "off"
+					}
+				}
+			}
+		},
+		{
+			"includes": ["public/**"],
+			"formatter": {
+				"enabled": false
+			},
+			"linter": {
+				"enabled": false
+			}
+		},
+		{
+			"includes": ["dist/**"],
+			"formatter": {
+				"enabled": false
+			},
+			"linter": {
+				"enabled": false
+			}
+		},
+		{
+			"includes": ["src/components/ui/**"],
+			"formatter": {
+				"enabled": false
+			},
+			"linter": {
+				"rules": {
+					"nursery": {
+						"noSecrets": "off"
+					}
+				}
+			}
+		}
+	]
 }
