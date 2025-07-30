@@ -4,7 +4,7 @@
 
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-
+import "../../utils/contact/fix-leaflet-icon";
 // const mapContainerStyle = {
 //   width: "100%",
 //   height: "400px",
