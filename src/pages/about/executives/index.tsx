@@ -3,7 +3,6 @@
 import { useMembers } from "@api/members";
 import { ExecutivesCard } from "@components/Executives";
 import { Paginated, Spinner } from "@components/shared";
-import { teamMembers } from "@mocks/data";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 
@@ -60,7 +59,7 @@ export function OurExecutives() {
 
 					<div className="flex flex-wrap justify-center gap-18">
 						{loadingStatus ||
-							teamMembers.map((member) => (
+							members?.rows.map((member) => (
 								<div className="w-full lg:w-[25rem]" key={member.id}>
 									<ExecutivesCard key={member.id} member={member} />
 								</div>
