@@ -5,8 +5,9 @@ export interface Member {
 	slug: string;
 	type: "EXECUTIVE" | "GENERAL";
 	name: string;
-	imageId: string;
-	imageUrl: string;
+	gender: "Male" | "Female";
+	imageId: string | null;
+	imageUrl: string | null;
 	role?: string;
 	description?: string;
 	email?: string;

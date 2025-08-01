@@ -8,9 +8,9 @@ export const teamMembers: Member[] = [
 		type: "EXECUTIVE",
 		name: "Lindsay Walton",
 		imageId: "image-1",
-		imageUrl:
-			"https://media.istockphoto.com/id/2000672702/photo/happy-smiling-mature-indian-or-latin-business-man-ceo-trader-using-computer-typing-working-in.jpg?s=612x612&w=0&k=20&c=cQ7M4YxnYYDTKzYMS6pKjmZAH-9LpXjcMmJJyhT6LE0=",
+		imageUrl: null,
 		role: "CEO",
+		gender: "Female",
 		description:
 			"This is your Team Member description. Use this space to write a brief description of this person’s role and responsibilities, or add a short bio.",
 		email: "lindsay.walton@example.com",
@@ -29,6 +29,7 @@ export const teamMembers: Member[] = [
 		imageUrl:
 			"https://media.istockphoto.com/id/2000672702/photo/happy-smiling-mature-indian-or-latin-business-man-ceo-trader-using-computer-typing-working-in.jpg?s=612x612&w=0&k=20&c=cQ7M4YxnYYDTKzYMS6pKjmZAH-9LpXjcMmJJyhT6LE0=",
 		role: "COO",
+		gender: "Male",
 		description:
 			"This is your Team Member description. Use this space to write a brief description of this person’s role and responsibilities, or add a short bio.",
 		email: "courtney.henry@example.com",
@@ -47,6 +48,7 @@ export const teamMembers: Member[] = [
 		imageUrl:
 			"https://media.istockphoto.com/id/2000672702/photo/happy-smiling-mature-indian-or-latin-business-man-ceo-trader-using-computer-typing-working-in.jpg?s=612x612&w=0&k=20&c=cQ7M4YxnYYDTKzYMS6pKjmZAH-9LpXjcMmJJyhT6LE0=",
 		role: "Director of Product",
+		gender: "Male",
 		description:
 			"This is your Team Member description. Use this space to write a brief description of this person’s role and responsibilities, or add a short bio.",
 		email: "tom.cook@example.com",
@@ -65,6 +67,7 @@ export const teamMembers: Member[] = [
 		imageUrl:
 			"https://media.istockphoto.com/id/2000672702/photo/happy-smiling-mature-indian-or-latin-business-man-ceo-trader-using-computer-typing-working-in.jpg?s=612x612&w=0&k=20&c=cQ7M4YxnYYDTKzYMS6pKjmZAH-9LpXjcMmJJyhT6LE0=",
 		role: "Copywriter",
+		gender: "Female",
 		description:
 			"This is your Team Member description. Use this space to write a brief description of this person’s role and responsibilities, or add a short bio.",
 		email: "whitney.francis@example.com",
@@ -83,6 +86,7 @@ export const teamMembers: Member[] = [
 		imageUrl:
 			"https://media.istockphoto.com/id/2000672702/photo/happy-smiling-mature-indian-or-latin-business-man-ceo-trader-using-computer-typing-working-in.jpg?s=612x612&w=0&k=20&c=cQ7M4YxnYYDTKzYMS6pKjmZAH-9LpXjcMmJJyhT6LE0=",
 		role: "Senior Engineer",
+		gender: "Male",
 		description:
 			"This is your Team Member description. Use this space to write a brief description of this person’s role and responsibilities, or add a short bio.",
 		email: "leonard.krasner@example.com",
@@ -101,6 +105,7 @@ export const teamMembers: Member[] = [
 		imageUrl:
 			"https://media.istockphoto.com/id/2000672702/photo/happy-smiling-mature-indian-or-latin-business-man-ceo-trader-using-computer-typing-working-in.jpg?s=612x612&w=0&k=20&c=cQ7M4YxnYYDTKzYMS6pKjmZAH-9LpXjcMmJJyhT6LE0=",
 		role: "Principal Designer",
+		gender: "Female",
 		email: "floyd.miles@example.com",
 		linkedinUrl: "#",
 		twitterUrl: "#",

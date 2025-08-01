@@ -27,7 +27,12 @@ export const ExecutivesCard: React.FC<ExecutivesCardProps> = (props) => {
 				<img
 					alt={member.name}
 					className="h-[30vh] w-full rounded-lg border object-cover"
-					src={member.imageUrl}
+					src={
+						member.imageUrl ??
+						(member.gender === "Male"
+							? "/images/placeholder-male.jpg"
+							: "/images/placeholder-female.jpg")
+					}
 				/>
 			</CardHeader>
 
